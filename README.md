@@ -24,6 +24,12 @@ DIYが好きなユーザ。手間を掛けて作る喜びに動揺出来るユ�
 自分のDIY画像や作り方などを誰かに共有したい時
 
 ## 設計書
+- UIフロー：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy　
+- UIフロー：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy
+- フレームワーク：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy
+- ER図：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy
+- テーブル定義書：https://docs.google.com/spreadsheets/d/1nmeXXSRkQq-HBxtgDB0_UT4F_pomK8Pq4yCmZv17YwM/edit#gid=220603177
+- 詳細設計書：https://docs.google.com/spreadsheets/d/1h_Yx0ItNYg7JlevlyU5r2RFyNR9RJemJIUA9JL47Rl4/edit#gid=0
 
 
 ## チャレンジ要素一覧

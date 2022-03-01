@@ -27,7 +27,7 @@ DIYが好きなユーザ。手間を掛けて作る喜びに動揺出来るユ�
 
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1WMonxMX4fyRbjwy-p1y1Q78xdxMDyNWjhcMCtRzebSU/edit#gid=566224576
+https://docs.google.com/spreadsheets/d/1WMonxMX4fyRbjwy-p1y1Q78xdxMDyNWjhcMCtRzebSU/edit#gid=0
 
 ## 開発環境
 - OS：Windows10

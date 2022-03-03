@@ -1,0 +1,33 @@
+    <header>
+      <% if user_signed_in? %>
+      <ul>
+        <li>
+          <%= link_to "投稿する" %>
+        </li>
+        <li>
+          <%= link_to  "user" %>
+        </li>
+        <li>
+          <%= link_to  "画像" %>
+        </li>
+        <li>
+          <%= link_to  "ログアウト", destroy_user_session_path, method: :derete %>
+        </li>
+      </ul>
+      <% else %>
+      <ul>
+        <li>
+          <%= link_to "ホーム", root_path %>
+        </li>
+        <li>
+          <%= link_to "About" %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+      </ul>
+      <% end %>
+    </header>

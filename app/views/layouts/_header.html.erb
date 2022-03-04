@@ -1,33 +1,41 @@
-    <header>
-      <% if user_signed_in? %>
-      <ul>
-        <li>
-          <%= link_to "投稿する" %>
-        </li>
-        <li>
-          <%= link_to  "user" %>
-        </li>
-        <li>
-          <%= link_to  "画像" %>
-        </li>
-        <li>
-          <%= link_to  "ログアウト", destroy_user_session_path, method: :derete %>
-        </li>
-      </ul>
-      <% else %>
-      <ul>
-        <li>
-          <%= link_to "ホーム", root_path %>
-        </li>
-        <li>
-          <%= link_to "About" %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-      </ul>
-      <% end %>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">てまや</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+              <li class="nav-item action">
+                <%= link_to "投稿する", class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  "user", class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  "画像", class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  "ログアウト", destroy_user_session_path, method: :derete, class: "nav-link" %>
+              </li>
+            </ul>
+            　<% else %>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <%= link_to "ホーム", root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "About", class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+              </li>
+            　<% end %>
+            </ul>
+          </div>
+      </div>
+    </nav>

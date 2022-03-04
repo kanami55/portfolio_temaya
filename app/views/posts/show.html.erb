@@ -1,2 +1,22 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+    <div class="row">
+      <div class="col-5">
+        <%= image_tag @post.photo, size: "500x400" %>
+
+        <div class="float-right">
+          <% if @post.user_id == current_user.id %>
+            <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-sm btn-success mt-3 ml-auto" %>
+            <%= link_to "削除", post_path, method: :delete, class: "btn btn-sm btn-danger mt-3 ml-auto"%>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="col-6 ml-5">
+        <%#= image_tag @post.user.profile_image, size: "50x50" %>
+        <%= @post.user.name %><br>
+        <%= @post.title %><br>
+        <%= @post.production_period %><br>
+        <%= @post.cost %><br>
+        難易度:<br>
+        <%= @post.explanation %>
+      </div>
+    </div>

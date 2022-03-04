@@ -6,15 +6,19 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.save
-    redirect_to posts_path
+    if @post.save
+      redirect_to posts_path(@post)
+    else
+      render new_post_path
+    end
   end
 
   def index
-    @post = post.includes(:user)
+    @post = Post.includes(:user)
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def edit
@@ -23,6 +27,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.requier(:post).permit(:user_id, :title, :production_period, :cost, :difficulty, :explanation, :photo)
+    params.require(:post).permit(:title, :production_period, :cost, :difficulty, :explanation, :photo).merge(user_id: current_user.id)
   end
 end

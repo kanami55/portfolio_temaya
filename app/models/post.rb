@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-
+   belongs_to :user
   #ActiveStrage使用宣言
   has_one_attached :photo
 

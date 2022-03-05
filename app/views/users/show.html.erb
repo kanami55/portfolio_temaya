@@ -1,7 +1,7 @@
 
   <div class="row">
     <% if @user == current_user %>
-    <%#= image_tag @user.user.profile_image, size: "50x50" %>
+    <%#= image_tag @user.profile_image, size: "50x50" %>
     <%= @user.name %>
     <%= link_to "プロフィール編集", edit_user_registration_path, class: "btn btn-sm btn-warning" %>
     <% end %>

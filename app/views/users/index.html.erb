@@ -4,7 +4,9 @@
     <% if post.photo.attached? %>
     <%= image_tag post.photo, size: "320x300" %>
     <% end %>
-    <%= post.title %><br>
+    <%= post.title %>
+    <%#= image_tag post.user.profile_image %>
+    <%= post.user.name %><br>
     難易度:
     </div>
     <% end %>

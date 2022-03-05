@@ -6,8 +6,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to user_path
+    if @user.save
+      redirect_to user_path
+    else
+      render new_user_registration_path
+    end
   end
 
   def index
@@ -15,10 +18,20 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
-  #def edit
-  #end
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    user.save
+    redirect_to user_path(user.id)
+  end
 
   private
   def user_params

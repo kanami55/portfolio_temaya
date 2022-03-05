@@ -1,2 +1,22 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+　　<div class="card mx-auto col-7 shadow p-3 mb-5 bg-white rounded">
+      <div class="col-6 mt-3 row">
+        <h2>投稿編集</h2>
+          <%= form_with model: @user, method: :patch do |f| %>
+          <div class="form-group">
+          <%= f.label "プロフィール画像" %>
+          <%= f.file_field :profile_image, accept: "image/*" %><br>
+          </div>
+          <div class="form-group">
+          <%= f.label "ユーザ名" %>
+          <%= f.text_field :name %><br>
+          </div>
+          <div class="form-group">
+          <%= f.label "自己紹介" %>
+          <%= f.text_area :introduction %><br>
+          </div>
+          <div class="form-group action">
+          <%= f.submit  "更新", class: "btn btn-sm btn-info" %>
+          </div>
+          <% end %>
+      </div>
+    </div>

@@ -1,23 +1,17 @@
-
-  <div class="row">
-    <% if @user == current_user %>
-    <%#= image_tag @user.profile_image, size: "50x50" %>
-    <%= @user.name %>
-    <%= link_to "プロフィール編集", edit_user_registration_path, class: "btn btn-sm btn-warning" %>
-    <% end %>
-  </div>
-
-
-  <div class="row">
     <% @posts.each do |post| %>
-    <div class="col-3 p-0 ml-5">
-    <% if post.photo.attached? %>
-    <%= link_to post_path(post.id) do %>
-    <%= image_tag post.photo, size: "320x300" %>
+      <div class="row float-right">
+      <%= image_tag post.user.profile_image, size: "50x50" %>
+      <%= post.user.name %>
+      <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-sm btn-warning" %>
+      </div>
+      <div class="col-3 p-0 ml-5 mt-5">
+      <% if post.photo.attached? %>
+      <%= link_to post_path(post.id) do %>
+      <%= image_tag post.photo, size: "320x300" %>
+      <% end %>
+      <% end %>
+      <%= post.title %>
+      <%= post.created_at.strftime('%Y/%m/%d') %>
+      </div>
     <% end %>
-    <% end %>
-    <%= post.title %>
-    <%= post.created_at.strftime('%Y/%m/%d') %>
-    </div>
-    <% end %>
-  </div>
+

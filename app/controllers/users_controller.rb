@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
- def new
+  def new
     @user = User.new
   end
 
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path
     else
-      render new_user_registration_path
+      render "edit"
     end
   end
 
@@ -23,18 +23,22 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def update
     user = User.find(params[:id])
     user.update(user_params)
-    user.save
-    redirect_to user_path(user.id)
+    if user.save
+      redirect_to user_path(user.id)
+    else
+      render "edit"
+    end
   end
 
   private
+
   def user_params
-    params.reqier(:user).permit(:profile_image, :introduction, :name)
+    params.require(:user).permit(:profile_image, :introduction, :name)
   end
 end

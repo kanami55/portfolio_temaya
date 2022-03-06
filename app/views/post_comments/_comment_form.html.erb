@@ -1,5 +1,5 @@
   <!--コメントフォーム部分テンプレート-->
-    <%= form_with model: [post, post_comment] do |f| %>
-    <%= f.text_area :comment %><br>
+    <%= form_with(model: [post, post_comment], local: false) do |f| %>
+    <%= f.text_area :comment, id: 'textarea' %><br>
     <%= f.submit "送信", class: "btn btn-sm btn-info" %>
     <% end %>

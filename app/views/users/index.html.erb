@@ -5,7 +5,7 @@
     <%= image_tag post.photo, size: "320x300" %>
     <% end %>
     <%= post.title %>
-    <%#= image_tag post.user.profile_image %>
+    <%= image_tag post.user.get.profile_image, size: "50x50" %>
     <%= post.user.name %><br>
     難易度:
     </div>

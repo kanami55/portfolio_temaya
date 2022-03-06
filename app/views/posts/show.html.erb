@@ -14,7 +14,7 @@
         <%= image_tag @post.user.get_profile_image, size: "50x50" %>
         <%= @post.user.name %><br>
 
-        <!--非同期通信いいね-->
+        <!--非同期通信いいね機能-->
         <div id="like_btn_<%= @post.id %>">
           <%= render "likes/like", post: @post %><br>
         </div>
@@ -24,5 +24,16 @@
         <%= @post.cost %><br>
         難易度:<br>
         <%= @post.explanation %>
+
+        <!--コメント一覧-->
+        <div id="post_comment_index">
+          <%= render "post_comments/post_comment", post: @post %>
+        </div>
+
+        <!--コメントフォーム-->
+        <div id="post_comment_form">
+          <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
+        </div>
+
       </div>
     </div>

@@ -1,10 +1,10 @@
-  <!--いいねを既に押しているか判断-->
-  <% if post.liked_by?(current_user) %>
-    <%= link_to post_likes_path(post), method: :delete do %>
+  <!--ユーザが既に「いいね」しているか判別-->
+  <% if current_user.already_liked?(post) %>
+    <%= link_to post_likes_path(post), method: :delete, remote: true do %>
     ♥<%= post.likes.count %>
     <% end %>
   <% else %>
-    <%= link_to post_likes_path(post), method: :post do %>
+    <%= link_to post_likes_path(post), method: :post, remote: true do %>
     ♡<%= post.likes.count %>
     <% end %>
   <% end %>

@@ -13,7 +13,12 @@
       <div class="col-6 ml-5">
         <%= image_tag @post.user.get_profile_image, size: "50x50" %>
         <%= @post.user.name %><br>
-        <%= render "likes/like", post: @post %><br>
+
+        <!--非同期通信いいね-->
+        <div id="like_btn_<%= @post.id %>">
+          <%= render "likes/like", post: @post %><br>
+        </div>
+
         <%= @post.title %><br>
         <%= @post.production_period %><br>
         <%= @post.cost %><br>

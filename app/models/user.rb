@@ -15,4 +15,9 @@ class User < ApplicationRecord
      (profile_image_attachment) ? profile_image: "no_image.jpg"
     end
 
+    #ユーザ「いいね」しているか判別
+    def already_liked?(post)
+      self.likes.exists?(post_id: post.id)
+    end
+
 end

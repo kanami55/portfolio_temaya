@@ -1,9 +1,9 @@
-    <% @posts.each do |post| %>
-      <div class="row float-right">
-      <%= image_tag post.user.profile_image, size: "50x50" %>
-      <%= post.user.name %>
+    <div class="row float-right">
+      <%= image_tag @user.get_profile_image, size: "50x50" %>
+      <%= @user.name %>
       <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-sm btn-warning" %>
-      </div>
+    </div>
+    <% @posts.each do |post| %>
       <div class="col-3 p-0 ml-5 mt-5">
       <% if post.photo.attached? %>
       <%= link_to post_path(post.id) do %>

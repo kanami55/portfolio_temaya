@@ -9,8 +9,8 @@ class User < ApplicationRecord
   #ActiveStrage使用宣言
    has_one_attached :profile_image
 
-   def get_profile_image
-     (profile_image_attached?) ? profile_image: "no_image.jpg"
-   end
+    def get_profile_image
+     (profile_image_attachment) ? profile_image: "no_image.jpg"
+    end
 
 end

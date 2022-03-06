@@ -1,6 +1,6 @@
     <div class="card mx-auto col-7 shadow p-3 mb-5 bg-white rounded">
       <h2>新規投稿</h2>
-        <%= form_with model: @post do |f| %>
+        <%= form_with model: @post, method: :post do |f| %>
           <div class="ml-3 mt-3">
             <div class="row mt-2">
               <div class="col-3">

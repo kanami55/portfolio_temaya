@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to posts_path(@post)
+      redirect_to posts_path
     else
       render new_post_path
     end
@@ -44,6 +44,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :production_period, :cost, :difficulty, :explanation, :photo).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :production_period, :cost, :difficulty, :explanation, :photo)
   end
 end

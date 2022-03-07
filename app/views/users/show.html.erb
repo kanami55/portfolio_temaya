@@ -1,14 +1,15 @@
     <div class="row float-right">
       <%= image_tag @user.get_profile_image, size: "50x50" %>
       <%= @user.name %>
+      <%= render "relationships/relationship", user: @user, following_users: @following_users, follower_users: @follower_users %>
       <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-sm btn-warning" %>
     </div>
     <% @posts.each do |post| %>
       <div class="col-3 p-0 ml-5 mt-5">
       <% if post.photo.attached? %>
-      <%= link_to post_path(post.id) do %>
-      <%= image_tag post.photo, size: "320x300" %>
-      <% end %>
+        <%= link_to post_path(post.id) do %>
+          <%= image_tag post.photo, size: "320x300" %>
+        <% end %>
       <% end %>
       <%= post.title %>
       <%= post.created_at.strftime('%Y/%m/%d') %>

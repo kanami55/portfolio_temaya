@@ -14,12 +14,15 @@ class PostsController < ApplicationController
   end
 
   def index
-    @post = Post.includes(:user)
+    @posts = Post.includes(:user)
   end
 
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
+    @user = current_user
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
   end
 
   def edit

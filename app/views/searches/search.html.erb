@@ -1,0 +1,20 @@
+<p>検索結果</p>
+<% if @range == "User" %>
+  <div class="row">
+    <% @users.each do |user| %>
+    <div class="col-3 p-0 ml-5 mt-3">
+      <%= link_to user_path(user.id) do %>
+      <%= image_tag user.get_profile_image, size: "50x50" %>
+      <%= user.name %><br>
+      <% end %>
+      <%= link_to post_path(user.post.id) do %>
+      <%= image_tag user.post.photo, size: "320x300" %>
+      <% end %>
+      <%= user.post.title %><br>
+      難易度:
+    </div>
+    <% end %>
+  </div>
+<% else %>
+<%= render "posts/index", posts: @posts %>
+<% end %>

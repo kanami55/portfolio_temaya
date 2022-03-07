@@ -1,0 +1,17 @@
+  <div class="row">
+    <% posts.each do |post| %>
+    <div class="col-3 p-0 ml-5 mt-3">
+      <% if post.photo.attached? %>
+      <%= link_to post.user do %>
+      <%= image_tag post.user.get_profile_image, size: "50x50" %>
+      <%= post.user.name %><br>
+      <% end %>
+      <%= link_to post_path(post.id) do %>
+      <%= image_tag post.photo, size: "320x300" %>
+      <% end %>
+      <% end %>
+      <%= post.title %><br>
+      難易度:
+    </div>
+    <% end %>
+  </div>

@@ -20,6 +20,7 @@
         </div>
         <!--フォロー・フォロワー-->
         <%= render "relationships/relationship", user: @post.user, following_users: @following_users, follower_users: @follower_users %>
+
         <%= @post.title %><br>
         <%= @post.production_period %><br>
         <%= @post.cost %><br>

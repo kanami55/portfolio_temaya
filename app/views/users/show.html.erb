@@ -1,7 +1,7 @@
     <div class="row float-right">
       <%= image_tag @user.get_profile_image, size: "50x50" %>
       <%= @user.name %>
-      <%= render "relationships/relationship", user: @user, following_users: @following_users, follower_users: @follower_users %>
+        <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
       <%= link_to "プロフィール編集", edit_user_path, class: "btn btn-sm btn-warning" %>
     </div>
     <% @posts.each do |post| %>

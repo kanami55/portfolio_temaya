@@ -1,6 +1,6 @@
       <div class="card mx-auto col-7 shadow p-3 mb-5 bg-white rounded">
         <h2>投稿編集</h2>
-          <%= form_with model: @post, local: true, method: :patch do |f| %>
+          <%= form_with model: @post, local: true, method: :post do |f| %>
             <div class="ml-3 mt-3">
               <div class="row mt-2">
                 <div class="col-3">
@@ -34,6 +34,14 @@
                   <%= f.text_field :cost %>
                 </div>
               </div>
+              <div class="row mt-2 ml-1" id="star">
+                  <%= f.label :difficulty,'評価 ', class: 'col-md-3 col-form-label' %>
+                  <%= f.hidden_field :difficulty, id: :review_star %>
+              </div>
+
+              <!-- 評価javascript -->
+              <%= render "posts/star" %>
+
               <div class="row mt-2">
                 <div class="col-3">
                   <%= f.label "説明" %>
@@ -42,9 +50,9 @@
                   <%= f.text_area :explanation %>
                 </div>
               </div>
-                  <div class="text-center mt-2">
+              <div class="text-center mt-2">
                   <%= f.submit  "更新", class: "btn btn-sm btn-info" %>
-                  </div>
+              </div>
             </div>
           <% end %>
       </div>

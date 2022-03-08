@@ -34,6 +34,14 @@
                 <%= f.text_field :cost %>
               </div>
             </div>
+            <div class="row mt-2 ml-1" id="star">
+                <%= f.label :difficulty,'評価 ', class: 'col-md-3 col-form-label' %>
+                <%= f.hidden_field :difficulty, id: :review_star %>
+            </div>
+
+            <!-- 評価javascript -->
+            <%= render "posts/star" %>
+
             <div class="row mt-2">
               <div class="col-3">
                 <%= f.label "説明" %>

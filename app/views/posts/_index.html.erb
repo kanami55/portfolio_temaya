@@ -11,7 +11,20 @@
       <% end %>
       <% end %>
       <%= post.title %><br>
-      難易度:
+      <div class="row">
+        <div>難易度: </div>
+        <div class="ml-2" id="star-rate<%= post.id %>"></div>
+          <script>
+            $('#star-rate<%= post.id%>').raty({
+              size      : 20,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              half      : false,
+              readOnly: true,
+              score: <%= post.difficulty %>,
+            });
+          </script>
+      </div>
     </div>
     <% end %>
   </div>

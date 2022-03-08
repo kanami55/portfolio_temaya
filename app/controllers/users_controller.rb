@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @post = Post.includes(:user)
+    @posts = Post.includes(:user)
   end
 
   def show

@@ -7,10 +7,9 @@
         <%= image_tag user.get_profile_image, size: "50x50" %>
         <%= user.name %><br>
         <% end %>
-        <%= user.introduction %>
         </div>
         <% end %>
       </div>
     <% else %>
-    <%= render "posts/index", posts: @posts %>
+    　<%= render "posts/index", posts: @posts %>
     <% end %>

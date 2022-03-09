@@ -20,7 +20,8 @@ class User < ApplicationRecord
 
   #バリデーション
   validates :name, uniqueness: true, presence: true
-  validates :introduction, length:{ maximum: 100 }
+  validates :introduction, length:{ maximum: 140 }
+  
 
   #ActiveStrage使用
    has_one_attached :profile_image

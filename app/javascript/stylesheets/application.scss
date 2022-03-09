@@ -8,9 +8,27 @@ body {
   font-size: 16px;
   line-height: 24px;
   background-color: #f7f6f2;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 header {
   background-color: #f7f6f2;
 }
+
+footer {
+  background-color: #deb887;
+}
+
 

@@ -11,7 +11,7 @@
       </div>
 
       <div class="col-6 ml-5">
-        <%= image_tag @post.user.get_profile_image, size: "50x50" %>
+        <%= image_tag @post.user.get_profile_image, size: "50x50", class: "icon" %>
         <%= @post.user.name %><br>
 
         <!--非同期通信いいね機能-->

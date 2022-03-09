@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   #アソシエーション
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -16,6 +17,10 @@ class User < ApplicationRecord
   #一覧画面で使用
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
+
+  #バリデーション
+  validates :name, uniqueness: true, presence: true
+  validates :introduction, length:{ maximum: 100 }
 
   #ActiveStrage使用
    has_one_attached :profile_image

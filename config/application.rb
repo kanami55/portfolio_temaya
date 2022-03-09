@@ -18,6 +18,9 @@ module Temaya
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #Railsの時間を日本時間に設定
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
 

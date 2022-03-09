@@ -5,14 +5,14 @@
           <%= image_tag @post.photo, size: "400x300" %>
             <div class="text-right">
               <% if @post.user_id == current_user.id %>
-              <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-sm btn-success mt-3 ml-auto" %>
-              <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-sm btn-danger mt-3 ml-auto"%>
+              <%= link_to "編集", edit_post_path(@post.id), class: "btn_size btn_green mt-3 ml-auto" %>
+              <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn_size btn_red mt-3 ml-auto"%>
               <% end %>
             </div>
         </div>
       </div>
       <div class="col-md-7">
-        <div class="card-right ml-5">
+        <div class="card-right ml-4">
           <div class="card-right-comment">
             <div class="card-right-name">
               <%= image_tag @post.user.get_profile_image, size: "50x50", class: "icon" %>
@@ -49,7 +49,7 @@
                         starOn    : '<%= asset_path('star-on.png') %>',
                         half      : false,
                         readOnly: true,
-                        score: <%= @post.difficulty %>,
+                        score: '<%= @post.difficulty %>',
                       });
                     </script>
                   </div>

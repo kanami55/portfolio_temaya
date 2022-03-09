@@ -15,6 +15,7 @@ import "bootstrap";
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 require('packs/raty')
+import "../stylesheets/posts"
 
 Rails.start()
 Turbolinks.start()

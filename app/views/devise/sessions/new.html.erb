@@ -1,9 +1,9 @@
-  <div class="card mx-auto col-7 shadow p-3 mb-5 bg-white rounded">
+  <div class="card mx-auto col-6 shadow p-3 mb-5 bg-white rounded">
       <h2>ログイン</h2>
         <%= form_with model: @user, url: user_session_path do |f| %>
           <div class="ml-3 mt-3">
           <div class="row mt-2">
-            <div class="col-5">
+            <div class="col-4">
               <%= f.label "名前：" %>
             </div>
             <div class="col-4">
@@ -12,7 +12,7 @@
           </div>
 
           <div class="row mt-2">
-            <div class="col-5">
+            <div class="col-4">
               <%= f.label "パスワード：" %>
             </div>
             <div class="col-4">

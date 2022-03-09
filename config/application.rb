@@ -21,6 +21,8 @@ module Temaya
     #Railsの時間を日本時間に設定
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+    #フラッシュメッセージの日本語化
+    config.i18n.default_locale = :ja
   end
 end
 

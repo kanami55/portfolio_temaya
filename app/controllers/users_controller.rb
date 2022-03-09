@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path
     else
-      render "edit"
+      render :edit
     end
   end
 

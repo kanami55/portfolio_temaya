@@ -1,7 +1,8 @@
   <!--ユーザが既に「いいね」しているか判別-->
   <% if current_user.already_liked?(post) %>
     <%= link_to post_likes_path(post), method: :delete, remote: true do %>
-    ♥<%= post.likes.count %>
+    <i class="fas fa-heart"></i>
+    <%= post.likes.count %>
     <% end %>
   <% else %>
     <%= link_to post_likes_path(post), method: :post, remote: true do %>

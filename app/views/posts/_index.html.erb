@@ -1,7 +1,7 @@
   <div class="row mx-auto">
     <% posts.each do |post| %>
       <div class="col-3 mt-2">
-        <div class="card-wrap">
+        <div class="card-wrap Small shadow">
           <div class="card-header d-flex pt-1 pl-1 pb-1">
             <% if post.photo.attached? %>
             <%= link_to post.user do %>

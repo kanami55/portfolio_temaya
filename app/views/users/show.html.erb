@@ -6,7 +6,9 @@
       <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
     <div class="ml-auto">
       <% if @user == current_user %>
-        <%= link_to "プロフィール編集", edit_user_path, class: "btn_size btn_green" %>
+        <%= link_to  edit_user_path do %>
+          <i class="fas fa-cog fa-2x"></i>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -15,13 +15,25 @@
       <%= render "layouts/header" %>
     </header>
 
-
+    <!--フラッシュメッセージ-->
+      <!--成功した時-->
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <!--失敗した時-->
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
 
     <div class="container mt-4">
     <%= yield %>
     </div>
 
-    <footer class="text-center">
+    <footer>
       <%= render "layouts/footer" %>
     </footer>
 

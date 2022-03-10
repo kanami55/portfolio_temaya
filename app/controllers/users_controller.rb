@@ -32,9 +32,11 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.update(user_params)
     if user.save
+      flash[:notice] = "更新に成功しました。"
       redirect_to user_path(user.id)
     else
-      render "edit"
+      flash[:alert] = "更新に失敗しました。"
+      render :edit
     end
   end
 

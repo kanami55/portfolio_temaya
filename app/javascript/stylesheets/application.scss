@@ -45,6 +45,15 @@ h2 {
   border-radius: 3px;
 }
 
+.btn_small {
+  display: inline-block;
+  padding: 0px 5px;
+  text-decoration: none;
+  color: #FFF;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
 /*青色更新、登録ボタン*/
 .btn_blue {
   background: #668ad8;/*ボタン色*/
@@ -61,6 +70,17 @@ h2 {
 .btn_red {
   background: #f08080;
   border-bottom: solid 4px #cd5c5c;
+}
+
+/*フォローボタン*/
+.btn_follow{
+  display: inline-block;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #668ad8;
+  border: solid 2px #668ad8;
+  border-radius: 5px;
+  transition: .4s;
 }
 
 

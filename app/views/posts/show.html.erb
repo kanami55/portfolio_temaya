@@ -1,79 +1,67 @@
-  <div class="col-md-9 col-md-offset-1 mx-auto postShow-wrap">
-    <div class="row post-wrap">
-      <div class="col-md-5">
-        <div class="card-left">
-          <%= image_tag @post.photo, size: "400x300" %>
+    <div class="col-md-9 mx-auto card">
+      <div class="row mt-2">
+        <div class="col-md-6">
+          <div class="border-bottom">
+            <%= link_to user_path(@post.user) do %>
+              <%= image_tag @post.user.get_profile_image, size: "50x50", class: "icon" %>
+              <strong><%= @post.user.name %></strong>
+            <% end %>
+          </div>
+          <!--非同期通信いいね機能-->
+          <div id="like_btn_<%= @post.id %>">
+            <%= render "likes/like", post: @post %>
+          </div>
+          <table>
+            <tbody>
+              <tr>
+                <th scope="col" style="width: 30%">タイトル：</th>
+                <td><%= @post.title %></td>
+              </tr>
+              <tr>
+                <th>製作期間：</th>
+                <td><%= @post.production_period %></td>
+              </tr>
+              <tr>
+                <th>かかった費用：</th>
+                <td><%= @post.cost %></td>
+              </tr>
+              <tr>
+                <th>難易度: </th>
+                <td id="star-rate<%= @post.id %>"></td>
+                <script>
+                  $('#star-rate<%= @post.id%>').raty({
+                    size      : 20,
+                    starOff   : '<%= asset_path('star-off.png') %>',
+                    starOn    : '<%= asset_path('star-on.png') %>',
+                    half      : false,
+                    readOnly: true,
+                    score: '<%= @post.difficulty %>',
+                  });
+                </script>
+              </tr>
+              <tr>
+                <th>説明：</th>
+                <td><%= @post.explanation %></td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="post_comment_index">
+            <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
+          </div>
+          <div id="post_comment_form">
+            <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <%= image_tag @post.photo, size: "380x300" %>
             <div class="text-right">
               <% if @post.user_id == current_user.id %>
-              <%= link_to "編集", edit_post_path(@post.id), class: "btn_size btn_green mt-3 ml-auto" %>
-              <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn_size btn_red mt-3 ml-auto"%>
+                <%= link_to "編集", edit_post_path(@post.id), class: "btn_size btn_green mt-3 ml-auto" %>
+                <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn_size btn_red mt-3 ml-auto"%>
               <% end %>
             </div>
         </div>
       </div>
-      <div class="col-md-7">
-        <div class="card-right ml-4">
-          <div class="card-right-comment">
-            <div class="card-right-name">
-              <%= image_tag @post.user.get_profile_image, size: "50x50", class: "icon" %>
-              <strong><%= @post.user.name %></strong>
-            </div>
-                <!--非同期通信いいね機能-->
-                  <div id="like_btn_<%= @post.id %>">
-                    <%= render "likes/like", post: @post %>
-                  </div>
-                <!--フォロー・フォロワー-->
-                  <div class="row ml-2">
-                    <%= render "relationships/relationship", user: @post.user, following_users: @following_users, follower_users: @follower_users %>
-                  </div>
-            <div class="m-2">
-                  <div class="row">
-                    <div class="col-4">タイトル：</div>
-                    <%= @post.title %>
-                  </div>
-                  <div class="row">
-                    <div class="col-4">製作期間：</div>
-                    <%= @post.production_period %>
-                  </div>
-                  <div class="row">
-                    <div class="col-4">かかった費用：</div>
-                    <%= @post.cost %>
-                  </div>
-                  <div class="row">
-                    <div class="col-4">難易度: </div>
-                    <div class="ml-2" id="star-rate<%= @post.id %>"></div>
-                    <script>
-                      $('#star-rate<%= @post.id%>').raty({
-                        size      : 20,
-                        starOff   : '<%= asset_path('star-off.png') %>',
-                        starOn    : '<%= asset_path('star-on.png') %>',
-                        half      : false,
-                        readOnly: true,
-                        score: '<%= @post.difficulty %>',
-                      });
-                    </script>
-                  </div>
-                  <div class="row">
-                    <div class="col-4">説明：</div>
-                    <%= @post.explanation %>
-                  </div>
-            </div>
-            <div class="comment-post-id">
-              <div class="m-2">
-                <!--コメント一覧-->
-                  <div id="post_comment_index">
-                    <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
-                  </div>
-
-                  <!--コメントフォーム-->
-                  <div id="post_comment_form">
-                    <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
- </div>
+
 

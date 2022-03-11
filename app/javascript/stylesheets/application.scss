@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400&display=swap');
 
 
 
@@ -8,6 +9,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   background-color: #f7f6f2;
+  font-family: cursive, 'M PLUS 2', sans-serif;
 }
 
 a {
@@ -43,6 +45,9 @@ header {
 
 footer {
   background-color: #deb887;
+  height: 70px;
+  line-height: 70px;
+
 }
 
 h2 {

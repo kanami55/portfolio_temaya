@@ -15,6 +15,7 @@
       <%= render "layouts/header" %>
     </header>
 
+
     <!--フラッシュメッセージ-->
       <!--成功した時-->
       <% if flash[:notice] %>
@@ -29,13 +30,10 @@
         </div>
       <% end %>
 
-    <div class="container mt-4">
     <%= yield %>
-    </div>
 
     <footer>
       <%= render "layouts/footer" %>
     </footer>
-
   </body>
 </html>

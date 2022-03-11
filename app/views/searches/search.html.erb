@@ -1,15 +1,17 @@
-  <p>検索結果</p>
-    <% if @range == "User" %>
-      <div class="row">
-        <% @users.each do |user| %>
-        <div class="col-3 p-0 ml-5">
-        <%= link_to user_path(user.id) do %>
-        <%= image_tag user.get_profile_image, size: "50x50" %>
-        <%= user.name %><br>
-        <% end %>
+  <div class="container mt-4">
+    <h3><strong>検索結果</strong></h3>
+      <% if @range == "User" %>
+        <div class="row">
+          <% @users.each do |user| %>
+          <div class="col-3 p-0 ml-5">
+          <%= link_to user_path(user.id) do %>
+          <%= image_tag user.get_profile_image, size: "50x50" %>
+          <%= user.name %><br>
+          <% end %>
+          </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-    <% else %>
-    <%= render "posts/index", posts: @posts %>
-    <% end %>
+      <% else %>
+      <%= render "posts/index", posts: @posts %>
+      <% end %>
+　</div>

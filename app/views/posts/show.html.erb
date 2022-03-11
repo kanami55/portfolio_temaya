@@ -1,11 +1,12 @@
+  <div class="container mt-4">
     <div class="col-md-9 mx-auto card Small shadow">
       <div class="row mt-2">
         <div class="col-md-6">
           <div class="border-bottom">
-            <%= link_to user_path(@post.user) do %>
-              <%= image_tag @post.user.get_profile_image, size: "50x50", class: "icon" %>
-              <strong><%= @post.user.name %></strong>
-            <% end %>
+              <%= link_to user_path(@post.user) do %>
+                <%= image_tag @post.user.get_profile_image, class: "icon_medium mb-2" %>
+                <span class="name_font"><%= @post.user.name %></span>
+              <% end %>
           </div>
           <!--非同期通信いいね機能-->
           <div id="like_btn_<%= @post.id %>">
@@ -63,5 +64,5 @@
         </div>
       </div>
     </div>
-
+  </div>
 

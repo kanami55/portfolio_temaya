@@ -1,7 +1,10 @@
+//= require swiper/swiper-bundle.min.js
+//= require swiper.js
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -16,9 +19,22 @@ import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import "../stylesheets/posts"
 import "../stylesheets/users"
+import "../stylesheets/homes"
+
 require('packs/raty')
 
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+const CLASSNAME = "-visible";
+const TIMEOUT = 1500;
+const $target = $(".title");
+
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    $target.removeClass(CLASSNAME);
+  }, TIMEOUT);
+}, TIMEOUT * 2);

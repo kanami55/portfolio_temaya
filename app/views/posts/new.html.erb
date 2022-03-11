@@ -1,3 +1,4 @@
+  <div class="container mt-4">
     <div class="card mx-auto col-7 shadow p-3 mb-5 bg-white rounded">
       <h2>新規投稿</h2>
       <%= render "posts/error_message", post: @post %>
@@ -35,8 +36,8 @@
                 <%= f.text_field :cost %>
               </div>
             </div>
-            <div class="row mt-2 ml-1" id="star">
-                <%= f.label :difficulty,'評価 ', class: 'col-md-3 col-form-label' %>
+            <div class="row mt-2" id="star">
+                <%= f.label :difficulty,'難易度： ', class: 'col-md-3 col-form-label' %>
                 <%= f.hidden_field :difficulty, id: :review_star %>
             </div>
 
@@ -57,3 +58,4 @@
           </div>
         <% end %>
     </div>
+  </div>

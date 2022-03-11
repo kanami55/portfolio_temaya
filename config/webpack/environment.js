@@ -8,7 +8,9 @@ environment.plugins.prepend(
     $: 'jquery/src/jquery',
     jQuery: 'jquery/src/jquery',
     jquery: 'jquery/src/jquery',
+     "window.jQuery": "jquery"
   })
 )
+
 
 module.exports = environment

@@ -120,6 +120,15 @@ h3 {
   transition: .4s;
 }
 
+/*imageにカーソルを当てたら浮き上がる*/
+.image_hover {
+  transition-duration: .3s;
+  transition-property: transform;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 
 
 

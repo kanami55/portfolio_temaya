@@ -16,14 +16,13 @@
       <div style="width: 500px">プロフィール :<br>
         <%= @user.introduction %>
       </div>
-
     <div class="row mx-auto">
       <% @posts.each do |post| %>
       <div class="col-3 mt-4">
         <div class="card-wrap shadow">
         <% if post.photo.attached? %>
           <%= link_to post_path(post.id) do %>
-            <%= image_tag post.photo, size: "247x200" %>
+            <%= image_tag post.photo, size: "247x200", class: "image_hover" %>
           <% end %>
         <% end %>
         <div class="card-body pt-1 pl-1 pb-1 bg-white border">

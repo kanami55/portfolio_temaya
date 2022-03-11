@@ -19,7 +19,7 @@
 
     <div class="row mx-auto">
       <% @posts.each do |post| %>
-      <div class="col-3 mt-5">
+      <div class="col-3 mt-4">
         <div class="card-wrap shadow">
         <% if post.photo.attached? %>
           <%= link_to post_path(post.id) do %>

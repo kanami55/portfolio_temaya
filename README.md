@@ -41,4 +41,5 @@ https://docs.google.com/spreadsheets/d/1WMonxMX4fyRbjwy-p1y1Q78xdxMDyNWjhcMCtRze
 - IDE：Cloud9
 
 ## 使用素材
-- O-DAN https://o-dan.net/ja/
+- O-DAN https: //o-dan.net/ja/
+- Google Fonts: https://fonts.google.com/

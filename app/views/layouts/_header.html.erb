@@ -8,21 +8,21 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li class="nav-item action">
-                <mark><%= link_to "投稿する", new_post_path, class: "nav-link" %></mark>
+                <%= link_to "投稿する >", new_post_path, class: "nav-link btn_post text-white" %>
               </li>
               <li class="nav-item">
                 <%= link_to user_path(current_user), class: "nav-link" do %>
-                  <i class="fas fa-user-circle fa-lg"></i>
+                  <i class="fas fa-user-circle fa-2x"></i>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to posts_path, class: "nav-link" do %>
-                  <i class="fas fa-images fa-lg"></i>
+                  <i class="fas fa-images fa-2x"></i>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-                  <i class="fas fa-sign-out-alt fa-lg"></i>
+                  <i class="fas fa-sign-out-alt fa-2x"></i>
                 <% end %>
               </li>
             </ul>

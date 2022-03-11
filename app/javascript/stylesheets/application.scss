@@ -100,7 +100,7 @@ h3 {
 }
 
 /*フォローボタン*/
-.btn_follow{
+.btn_follow {
   display: inline-block;
   padding: 3px 10px;
   text-decoration: none;
@@ -109,6 +109,18 @@ h3 {
   border-radius: 5px;
   transition: .4s;
 }
+
+/*投稿するボタン*/
+.btn_post {
+  display: inline-block;
+  text-decoration: none;
+  background: #ffa07a;
+  border-bottom: solid 2px #fa8072;
+  border-radius: 10px;
+  transition: .4s;
+}
+
+
 
 
 

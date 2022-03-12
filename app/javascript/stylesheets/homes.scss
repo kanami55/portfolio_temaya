@@ -1,3 +1,4 @@
+/*ホームの背景画像*/
 .home_backgraund {
     height: 600px;
     background-image: url("../images/back.jpg");
@@ -8,59 +9,73 @@
 }
 
 .top_text {
-   letter-spacing: 0.2em;
-   line-height: 1.5;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
 }
 
+/*ログインボタン*/
 .btn_log_in {
   font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  padding: 13px 50px 13px;
-  outline: 0;
-  border: 1px solid white;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid white;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
 }
 
 .btn_log_in::after {
-  content: "";
-  background-color: #ff7f50;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
+    content: "";
+    background-color: #ff7f50;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
 }
 
-
+/*新規登録ボタン*/
 .btn_sign_up {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  padding: 13px 50px 13px;
-  outline: 0;
-  border: 1px solid white;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid white;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
 }
 
 .btn_sign_up::after {
-  content: "";
-  background-color: #66cdaa;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
+    content: "";
+    background-color: #66cdaa;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
 }
 
+/*about*/
+.about_main {
+    text-align: center;
+}
+
+.about_top {
+    font-size: 50px;
+    line-height: 1.5;
+}
+
+.about_text {
+    font-size: 24px;
+}
 
 
 

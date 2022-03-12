@@ -14,8 +14,6 @@ Rails.application.routes.draw do
     end
     resource :relationships, only: [:create, :destroy]
   end
-  resources :messages, only: [:create]
-  resources :rooms, only: [:create, :show]
   get "/homes/about" => "homes#about", as: "about"
   get "/search" => "searches#search"
 end

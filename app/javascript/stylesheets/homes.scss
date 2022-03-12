@@ -1,23 +1,67 @@
 .home_backgraund {
- height: 600px;
- background-image: url("../images/back.jpg");
- background-repeat: no-repeat;
- background-position: center center;
- background-size: cover;
- opacity: 0.7;
+    height: 600px;
+    background-image: url("../images/back.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.7;
 }
 
-.top-text {
-  margin: 80px auto;
-	text-align: center;
-	display: block;
+.top_text {
+   letter-spacing: 0.2em;
+   line-height: 1.5;
 }
 
-h1 {
-  text-align: left;
-  margin: 0 auto;
-  text-align: center;
+.btn_log_in {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid white;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
 }
+
+.btn_log_in::after {
+  content: "";
+  background-color: #ff7f50;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+
+.btn_sign_up {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid white;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+
+.btn_sign_up::after {
+  content: "";
+  background-color: #66cdaa;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+
 
 
 

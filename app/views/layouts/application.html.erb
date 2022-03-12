@@ -10,12 +10,12 @@
   </head>
 
   <body>
-
+    <!--header-->
     <header class="shadow-sm sticky-top">
       <%= render "layouts/header" %>
     </header>
 
-
+    <!--main-->
     <!--フラッシュメッセージ-->
       <!--成功した時-->
       <% if flash[:notice] %>
@@ -32,6 +32,7 @@
 
     <%= yield %>
 
+    <!--footer-->
     <footer>
       <%= render "layouts/footer" %>
     </footer>

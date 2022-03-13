@@ -4,7 +4,9 @@
         <%= image_tag @user.get_profile_image, class: "icon_medium" %><br>
         <p class="name_font"><%= @user.name%></p>
       </div>
-        <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
+
+      <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
+
       <div class="ml-auto">
         <% if @user == current_user %>
           <%= link_to  edit_user_path do %>
@@ -16,6 +18,11 @@
       <div style="width: 500px">プロフィール :<br>
         <%= @user.introduction %>
       </div>
+
+    <% if current_user != @user %>
+      <%= link_to 'Begin Chat', chat_path(@user.id) %>
+    <% end %>
+
     <div class="row mx-auto">
       <% @posts.each do |post| %>
       <div class="col-3 mt-4">

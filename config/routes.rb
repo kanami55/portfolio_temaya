@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
   get "/homes/about" => "homes#about", as: "about"
   get "/search" => "searches#search"
+  resources :chats, only: [:create, :show]
 end

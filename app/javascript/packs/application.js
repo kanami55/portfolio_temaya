@@ -17,6 +17,7 @@ import "../stylesheets/application"
 // import '@fortawesome/fontawesome-free/js/all'
 import "../stylesheets/users"
 import "../stylesheets/homes"
+import "../stylesheets/chats"
 
 require('packs/raty')
 

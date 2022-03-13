@@ -1,41 +1,25 @@
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-6">
-              <h2>メッセージ <%= @user.name %></h2>
-
-              <table class="message table">
-                <thead>
-                  <tr>
-                    <th style="text-align: left; font-size: 20px;"><%= current_user.name %></th>
-                    <th style="text-align: right; font-size: 20px;"><%= @user.name %></th>
-                  </tr>
-                </thead>
-                <% @chats.each do |chat| %>
-                  <% if chat.user_id == current_user.id %>
-                  <tbody>
-                    <tr>
-                      <th>
-                        <p style="text-align: left;"><%= chat.message %></p>
-                      </th>
-                      <th></th>
-                    </tr>
-                  <% else %>
-                    <tr>
-                      <th></th>
-                      <th>
-                        <p style="text-align: right;"><%= chat.message %></p>
-                      </th>
-                    </tr>
-                  </tbody>
-                  <% end %>
+  <div class="container mt-4">
+    <div class="card col-8 mx-auto" style="font-size: 20px;">
+      <p class="mt-2"><%= @user.name %>さんへDM</p>
+        <div class="card" style="background-color: #b0e0e6;">
+          <div class="inner">
+            <% @chats.each do |chat| %>
+              <div class="row">
+                <% if chat.user_id == current_user.id %>
+                  <p class="text-right ml-auto mr-3 bg-success p-1 rounded-lg"><%= chat.message %></p>
+                <% else %>
+                  <p class="message-left ml-3"><%= chat.message %></p>
                 <% end %>
-              </table>
-
-              <%= form_with model: @chat, data: {remote: true} do |f| %>
-                <%= f.text_field :message %>
-                <%= f.hidden_field :room_id %>
-                <%= f.submit "送信", class:"btn btn-sm btn-success chat-btn" %>
-              <% end %>
+              </div>
+            <% end %>
           </div>
-      </div>
+        </div>
+        <div class="mt-2 mx-auto">
+          <%= form_with model: @chat, data: {remote: true} do |f| %>
+            <%= f.text_field :message, :size=>"40", class: "rounded-pill" %>
+            <%= f.hidden_field :room_id %>
+            <%= f.submit "送信", class: "btn_small btn_blue" %>
+          <% end %>
+        </div>
+    </div>
   </div>

@@ -20,8 +20,11 @@ import "../stylesheets/homes"
 import "../stylesheets/chats"
 
 require('packs/raty')
+require('packs/custom')
 
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+/*topへ戻る*/

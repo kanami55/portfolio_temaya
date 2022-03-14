@@ -1,11 +1,12 @@
   <div>
     <%= link_to following_users.count, follows_user_path(user), class: "ml-3" %>
-    <p class="mr-2">フォロー</p>
+    <p class="mr-2 mb-0">フォロー</p>
   </div>
   <div>
     <%= link_to follower_users.count, followers_user_path(user), class: "ml-3" %>
     <p>フォロワー</p>
   </div>
+
   <div class="ml-auto">
     <% if current_user != user %>
       <% if current_user.following?(user) %>
@@ -15,4 +16,5 @@
       <% end %>
     <% end %>
   </div>
+
 

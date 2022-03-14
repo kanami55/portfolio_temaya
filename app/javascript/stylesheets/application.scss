@@ -130,6 +130,26 @@ h3 {
   }
 }
 
+/*topへ戻るボタン*/
+#page_top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  //display: none;
+}
+
+#page_top a {
+  font-size: 14px;
+  padding: 10px 2px;
+  background-color: #ffe4e1;
+  color: #000;
+  border-radius: 50%;
+  line-height: 100px;
+  text-align: center;
+  &::hover {
+    opacity: 1;
+  }
+}
 
 
 

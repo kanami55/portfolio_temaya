@@ -1,22 +1,25 @@
   <div class="container mt-4">
-    <div class="card col-8 mx-auto" style="font-size: 20px;">
+    <%= link_to user_path(@user.id) do %>
+      <i class="fas fa-arrow-circle-left fa-2x" style="opacity: 70%;"></i>
+    <% end %>
+    <div class="card col-8 mx-auto Small shadow" style="font-size: 20px;">
       <p class="mt-2"><%= @user.name %>さんへDM</p>
         <div class="card" style="background-color: #b0e0e6;">
           <div class="inner">
             <% @chats.each do |chat| %>
               <div class="row">
                 <% if chat.user_id == current_user.id %>
-                  <p class="text-right ml-auto mr-3 bg-success p-1 rounded-lg"><%= chat.message %></p>
+                  <p class="text-right ml-auto mr-3 bg-success p-1 rounded-lg" style='text-align: left;'><%= chat.message %></p>
                 <% else %>
-                  <p class="message-left ml-3"><%= chat.message %></p>
+                  <p class="message-left ml-3 bg-success p-1 rounded-lg"><%= chat.message %></p>
                 <% end %>
               </div>
             <% end %>
           </div>
         </div>
         <div class="mt-2 mx-auto">
-          <%= form_with model: @chat, data: {remote: true} do |f| %>
-            <%= f.text_field :message, :size=>"40", class: "rounded-pill" %>
+          <%= form_with model: @chat, data:{remote: true} do |f| %>
+            <%= f.text_field :message, size: "30", class: "rounded-pill" %>
             <%= f.hidden_field :room_id %>
             <%= f.submit "送信", class: "btn_small btn_blue" %>
           <% end %>

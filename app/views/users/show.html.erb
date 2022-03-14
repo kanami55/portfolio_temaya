@@ -2,15 +2,9 @@
     <div class="row">
       <div class="mr-2">
         <%= image_tag @user.get_profile_image, class: "icon_medium" %><br>
-        <p class="name_font"><%= @user.name%></p>
+        <p class="name_font mb-0"><%= @user.name%></p>
       </div>
-
-
       <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
-      <% if current_user != @user %>
-      <i class="fas fa-envelope"></i>
-      <%= link_to 'DMへ', chat_path(@user.id) %>
-      <% end %>
 
       <div class="ml-auto">
         <% if @user == current_user %>
@@ -20,9 +14,15 @@
         <% end %>
       </div>
     </div>
-      <div style="width: 500px">プロフィール :<br>
-        <%= @user.introduction %>
-      </div>
+    <p class="ml-2 mb-0">
+      <% if current_user != @user %>
+        <i class="fas fa-envelope"></i>
+      <%= link_to 'DMへ', chat_path(@user.id) %>
+      <% end %>
+    </p>
+    <div style="width: 500px">プロフィール :<br>
+      <%= @user.introduction %>
+    </div>
 
     <div class="row mx-auto">
       <% @posts.each do |post| %>

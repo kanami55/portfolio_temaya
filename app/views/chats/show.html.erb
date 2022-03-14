@@ -5,13 +5,13 @@
     <div class="card col-8 mx-auto Small shadow" style="font-size: 20px;">
       <p class="mt-2"><%= @user.name %>さんへDM</p>
         <div class="card" style="background-color: #b0e0e6;">
-          <div class="inner">
+          <div class="inner message">
             <% @chats.each do |chat| %>
               <div class="row">
                 <% if chat.user_id == current_user.id %>
-                  <p class="text-right ml-auto mr-3 bg-success p-1 rounded-lg" style='text-align: left;'><%= chat.message %></p>
+                  <p class="text-right ml-auto mr-3 bg-success p-1 rounded-lg"><%= chat.message %></p>
                 <% else %>
-                  <p class="message-left ml-3 bg-success p-1 rounded-lg"><%= chat.message %></p>
+                  <p class="text-left ml-3 bg-success p-1 rounded-lg"><%= chat.message %></p>
                 <% end %>
               </div>
             <% end %>

@@ -1,17 +1,17 @@
-$(document).on('turbolinks:load', function () {
-  const pagetop = $('#page_top');
-  // ボタン非表示
-  pagetop.hide();
-  // 10px スクロールしたらボタン表示
-  $(window).on('scroll', function () {
-    if ($(this).scrollTop() > 10) {
-      pagetop.fadeIn();
-    } else {
-      pagetop.fadeOut();
-    }
+  /*topへ戻る*/
+    jQuery(window).on("scroll", function($) {
+      //10pxスクロールしたらボタンが登場
+  	if (jQuery(this).scrollTop() > 10) {
+  		jQuery('#page_top').show();
+  	} else {
+  		jQuery('#page_top').hide();
+  	}
   });
-  pagetop.on('click', function () {
-    $('body, html').animate({ scrollTop: 0 }, 500);
-    return false;
+    //ボタンをクリックしたら0.5秒かけて上に戻る
+  jQuery('#page_top').click(function () {
+  	jQuery('body,html').animate({
+  		scrollTop: 0
+  	}, 500);
+  	return false;
   });
-});
+

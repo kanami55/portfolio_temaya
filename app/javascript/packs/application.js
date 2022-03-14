@@ -27,4 +27,4 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-/*topへ戻る*/
+

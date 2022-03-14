@@ -8,14 +8,33 @@
     opacity: 0.7;
 }
 
+.top_box {
+    padding-top: 100px;
+}
+
 .top_text {
     letter-spacing: 0.2em;
-    line-height: 1.5;
+    line-height: 1.8;
+    background-color: rgba(0, 0, 0, 0);
+    outline: 0;
+    border: 2px solid black;
+    position: relative;
+}
+
+.top_text::after {
+    content: "";
+    background-color: #ffefd5;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
 }
 
 /*ログインボタン*/
 .btn_log_in {
-  font-size: 20px;
+    font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
     padding: 13px 50px 13px;

@@ -54,8 +54,8 @@
             <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
           </div>
         </div>
-        <div class="col-md-4">
-          <%= image_tag @post.photo, size: "380x300" %>
+        <div class="col-md-6">
+          <%= image_tag @post.photo, class: "post_image" %>
             <div>
               <% if @post.user_id == current_user.id %>
                 <%= link_to "編集", edit_post_path(@post.id), class: "btn_size btn_green mt-3 ml-auto" %>

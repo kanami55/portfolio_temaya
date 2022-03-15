@@ -3,8 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400&display=swap');
 
 
-
-
 //共通部分レイアウト
 * {
   margin: 0;
@@ -28,6 +26,13 @@ a {
 main {
   height: 100%;
 }
+
+/*投稿画像*/
+.post_image {
+  width: 100%;
+  height: 100%;
+}
+
 /*プロフィールアイコン*/
 .icon_large  {
   height: 50px;

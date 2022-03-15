@@ -6,7 +6,7 @@
       </div>
       <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
 
-      <div class="ml-auto">
+      <div class="ml-auto mr-2">
         <% if @user == current_user %>
           <%= link_to  edit_user_path do %>
             <i class="fas fa-user-cog fa-2x"></i>

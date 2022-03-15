@@ -1,16 +1,7 @@
   <% if @range == "User" %>
     <div class="container mt-4">
       <h3><strong>ユーザーの検索結果</strong></h3>
-        <div class="row">
-          <% @users.each do |user| %>
-            <div class="col-3 p-0 ml-5">
-            <%= link_to user_path(user.id) do %>
-              <%= image_tag user.get_profile_image, class: "icon_large" %>
-              <%= user.name %><br>
-            <% end %>
-            </div>
-          <% end %>
-        </div>
+        <%= render "relationships/index", users: @users %>
     </div>
   <% else %>
     <h3 class="ml-5 mt-4"><strong>キーワードの検索結果</strong></h3>

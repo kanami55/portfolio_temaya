@@ -1,7 +1,7 @@
   <div class="container mt-4">
     <div class="col-md-9 mx-auto card Small shadow">
       <div class="row mt-2">
-        <div class="col-md-6">
+        <div class="col-md-5 mt-1">
           <div class="border-bottom">
               <%= link_to user_path(@post.user) do %>
                 <%= image_tag @post.user.get_profile_image, class: "icon_medium mb-2" %>
@@ -15,19 +15,19 @@
           <table>
             <tbody>
               <tr>
-                <th scope="col" style="width: 30%">タイトル：</th>
+                <th scope="col" style="width: 50%">タイトル：</th>
                 <td><%= @post.title %></td>
               </tr>
               <tr>
-                <th>製作期間：</th>
+                <th style="width: 50%;">製作期間：</th>
                 <td><%= @post.production_period %></td>
               </tr>
               <tr>
-                <th>かかった費用：</th>
+                <th style="width: 50%;">かかった費用：</th>
                 <td><%= @post.cost %></td>
               </tr>
               <tr>
-                <th>難易度: </th>
+                <th style="width: 50%;">難易度: </th>
                 <td id="star-rate<%= @post.id %>"></td>
                 <!--評価javascript-->
                 <script>
@@ -42,7 +42,7 @@
                 </script>
               </tr>
               <tr>
-                <th>説明：</th>
+                <th style="width: 50%;">説明：</th>
                 <td><%= @post.explanation %></td>
               </tr>
             </tbody>
@@ -54,12 +54,12 @@
             <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 order-first">
           <%= image_tag @post.photo, class: "post_image" %>
-            <div>
+            <div class="text-right">
               <% if @post.user_id == current_user.id %>
-                <%= link_to "編集", edit_post_path(@post.id), class: "btn_size btn_green mt-3 ml-auto" %>
-                <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn_size btn_red mt-3 ml-auto"%>
+                <%= link_to "編集", edit_post_path(@post.id), class: "btn_small btn_green mt-1" %>
+                <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn_small btn_red mt-1"%>
               <% end %>
             </div>
         </div>

@@ -9,7 +9,7 @@
         describe 'ログイン前' do
           describe 'ユーザー新規登録' do
             context 'フォームの入力値が正常' do
-              it 'ユーザーの新規登録が成功' do
+              it 'ユーザー新規登録成功' do
                 #ユーザーの新規登録画面へ遷移
                 visit new_user_registration_path
                 # Nameテキストフィールドにユーザーテストと入力
@@ -27,44 +27,77 @@
               end
             end
 
-            context 'ユーザー名、メール未入力' do
-              it 'ユーザーの新規作成が失敗' do
-                #ユーザーの新規登録画面へ遷移
+            context 'ユーザー名' do
+              it 'ユーザー新規登録失敗' do
                 visit new_user_registration_path
-                # Nameテキストフィールドをnil状態にする
                 fill_in 'user[name]', with: nil
-                # Emailテキストフィールドをnil状態にする
-                fill_in 'user[email]', with: nil
-                # Passwordテキストフィールドにpasswordと入力
+                fill_in 'user[email]', with: user.email
                 fill_in 'user[password]', with: 'password'
-                # Password confirmationテキストフィールドにpasswordと入力
                 fill_in 'user[password_confirmation]', with: 'password'
-                # 登録と記述のあるsubmitをクリックする
                 click_button '登録'
-                # sign_up_pathへ遷移することを期待する
                 expect(current_path).to eq user_registration_path
               end
-
             end
 
-            context '登録済みユーザー名、メール' do
-              it 'ユーザーの新規作成が失敗' do
-                #ユーザーの新規登録画面へ遷移
+            context 'メール未入力' do
+              it 'ユーザー新規登録失敗' do
                 visit new_user_registration_path
-                # Nameテキストフィールドにlet(:user)に定義したユーザーデータのnameを入力
                 fill_in 'user[name]', with: user.name
-                # Emailテキストフィールドにlet(:user)に定義したユーザーデータのemailを入力
-                fill_in 'user[email]', with: user.email
-                # Passwordテキストフィールドにpasswordと入力
+                fill_in 'user[email]', with: nil
                 fill_in 'user[password]', with: 'password'
-                # Password confirmationテキストフィールドにpasswordと入力
                 fill_in 'user[password_confirmation]', with: 'password'
-                # 登録と記述のあるsubmitをクリックする
                 click_button '登録'
-                # sign_up_pathへ遷移することを期待する
+                expect(current_path).to eq user_registration_path
+              end
+            end
+
+            context 'パスワード未入力' do
+              it 'ユーザー新規登録失敗' do
+                visit new_user_registration_path
+                fill_in 'user[name]', with: user.name
+                fill_in 'user[email]', with: user.email
+                fill_in 'user[password]', with: nil
+                fill_in 'user[password_confirmation]', with: 'password'
+                click_button '登録'
+                expect(current_path).to eq user_registration_path
+              end
+            end
+
+            context '確認パスワード未入力' do
+              it 'ユーザー新規登録失敗' do
+                visit new_user_registration_path
+                fill_in 'user[name]', with: user.name
+                fill_in 'user[email]', with: user.email
+                fill_in 'user[password]', with: user.password
+                fill_in 'user[password_confirmation]', with: nil
+                click_button '登録'
+                expect(current_path).to eq user_registration_path
+              end
+            end
+
+            context '登録済みユーザー名' do
+              it 'ユーザー新規登録失敗' do
+                visit new_user_registration_path
+                fill_in 'user[name]', with: user.name
+                fill_in 'user[email]', with: user.email
+                fill_in 'user[password]', with: 'password'
+                fill_in 'user[password_confirmation]', with: 'password'
+                click_button '登録'
                 expect(current_path).to eq users_path
-                # 遷移されたページに'Email can't be blank'の文字列があることを期待する
-                expect(page).to have_content "てまや\nホーム About Photo ログイン 新規登録\n新規登録\n2 件のエラーが発生したため ユーザ は保 存されませんでした。\nEメールはすでに存在します Nameはすでに存在します\nユーザ名\nメールアドレス\nパスワード (6 文字以上)\n確認パスワード\nログイン\nTopへ\nCopyright © 2022 Temaya"
+                expect(page).to have_content "Nameはすでに存在します"
+              end
+            end
+
+            context '登録済みメールアドレス' do
+              it 'ユーザー新規登録失敗' do
+                visit new_user_registration_path
+                fill_in 'user[name]', with: user.name
+                fill_in 'user[email]', with: user.email
+                fill_in 'user[password]', with: 'password'
+                fill_in 'user[password_confirmation]', with: 'password'
+                click_button '登録'
+                expect(current_path).to eq users_path
+                expect(page).to have_content "Eメールはすでに存在します"
               end
             end
           end

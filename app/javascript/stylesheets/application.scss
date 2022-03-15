@@ -16,15 +16,37 @@ body {
   background-color: #f7f6f2;
   font-family: cursive, 'M PLUS 2', sans-serif;
   color: #000;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.wrap {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #f7f6f2;
+}
+
+footer {
+  width: 100%;
+  background-color: #deb887;
+  height: 70px;
+  line-height: 70px;
+  position: absolute;
+  bottom: 0;
 }
 
 a {
   text-decoration: none;
   color: #000000;
-}
-
-main {
-  height: 100%;
 }
 
 /*投稿画像*/
@@ -55,15 +77,6 @@ main {
   margin-right: 10px;
 }
 
-header {
-  background-color: #f7f6f2;
-}
-
-footer {
-  background-color: #deb887;
-  height: 70px;
-  line-height: 70px;
-}
 
 h2 {
   border-bottom: solid 2px #668ad8;

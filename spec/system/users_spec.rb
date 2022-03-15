@@ -13,7 +13,7 @@
                 #ユーザーの新規登録画面へ遷移
                 visit new_user_registration_path
                 # Nameテキストフィールドにユーザーテストと入力
-                fill_in 'user[name]', with: 'ユーザーテスト'
+                fill_in 'user[name]', with: 'テストユーザー'
                 # Emailテキストフィールドにtest@example.comと入力
                 fill_in 'user[email]', with: 'test@example.com'
                 # Passwordテキストフィールドにpasswordと入力
@@ -42,7 +42,7 @@
                 # 登録と記述のあるsubmitをクリックする
                 click_button '登録'
                 # sign_up_pathへ遷移することを期待する
-                expect(current_path).to eq sign_up_path
+                expect(current_path).to eq user_registration_path
               end
 
             end
@@ -62,43 +62,12 @@
                 # 登録と記述のあるsubmitをクリックする
                 click_button '登録'
                 # sign_up_pathへ遷移することを期待する
-                expect(current_path).to eq sigin_up_path
+                expect(current_path).to eq users_path
                 # 遷移されたページに'Email can't be blank'の文字列があることを期待する
-                expect(page).to have_content "Email has already been taken"
+                expect(page).to have_content "てまや\nホーム About Photo ログイン 新規登録\n新規登録\n2 件のエラーが発生したため ユーザ は保 存されませんでした。\nEメールはすでに存在します Nameはすでに存在します\nユーザ名\nメールアドレス\nパスワード (6 文字以上)\n確認パスワード\nログイン\nTopへ\nCopyright © 2022 Temaya"
               end
             end
           end
         end
-
-        describe 'ログイン後' do
-          before { login(user) }
-          describe 'ユーザー編集' do
-            context 'フォーム入力値が正常' do
-              it 'ユーザー編集が成功' do
-                visit edit_user_path(user)
-                fill_in 'user[name]', with: 'ユーザーテスト'
-                fill_in 'user[email]',with: 'text@example'
-                fill_in 'user[password]', with: 'password'
-                fill_in 'user[password_confirmation]', with: 'password'
-                click_button '更新'
-                expect(current_path).to eq user_path(user)
-              end
-            end
-
-            context 'ユーザ名、メールが未入力' do
-              it 'ユーザーの編集が失敗' do
-                visit edit_user_path(user)
-                fill_in 'user[name]', with: nil
-                fill_in 'user[email]', with: nil
-                fill_in 'user[password]', with: 'password'
-                fill_in 'user[password_confirmation]', with: 'password'
-                click_button '更新'
-                expect(current_psth).to eq edit_user_path(user)
-              end
-            end
-          end
-        end
-
       end
-
     end

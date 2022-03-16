@@ -8,6 +8,7 @@ class User < ApplicationRecord
   #アソシエーション
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
   has_many :post_comments, dependent: :destroy
 
   #フォローした、されたの関係

@@ -37,6 +37,14 @@
           expect(post.errors[:explanation]).to include("を入力してください")
         end
       end
+
+      context 'difficultyカラム' do
+        it '空欄で無いこと' do
+          post.difficulty = ''
+          expect(post).to be_invalid
+          expect(post.errors[:difficulty]).to include("を入力してください")
+        end
+      end
     end
 
     describe 'アソシエーションのテスト' do

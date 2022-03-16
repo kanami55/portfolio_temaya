@@ -2,8 +2,9 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
 
-  validates :photo, :production_period, :cost, :explanation, :title, presence: true
+  validates :photo, :production_period, :cost, :explanation, :title, :difficulty, presence: true
 
 
   #ActiveStrage使用宣言

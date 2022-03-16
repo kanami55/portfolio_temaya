@@ -3,8 +3,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :post_comments, dependent: :destroy
 
-  validates :photo, :production_period, :cost, :explanation, presence: true
-  validates :title, length: { maximum: 20 }, presence: true
+  validates :photo, :production_period, :cost, :explanation, :title, presence: true
 
 
   #ActiveStrage使用宣言

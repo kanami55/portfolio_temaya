@@ -1,16 +1,18 @@
 /*ホームの背景画像*/
 .home_backgraund {
     height: 600px;
-    background-image: url("../images/back.jpg");
+    background-image: url("../images/top_back.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/*.top_box {
+.top_box {
+    @media screen and (max-width: 576px) {
     padding-top: 20%;
-}*/
+    }
+}
 
 .top_text {
     letter-spacing: 0.2em;
@@ -19,6 +21,12 @@
     outline: 0;
     border: 2px solid black;
     position: relative;
+
+   @media screen and (max-width: 576px) {
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-size: 50px;
+   }
 }
 
 .top_text::after {
@@ -85,6 +93,20 @@
 /*about*/
 .about_main {
     text-align: center;
+    height: 600px;
+    background-image: url("../images/about_back2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &:hover {
+    text-align: center;
+    height: 600px;
+    background-image: url("../images/about_back3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    }
 }
 
 .about_top {
@@ -95,3 +117,33 @@
 .about_text {
     font-size: 24px;
 }
+
+/*.top_flex {
+    display: flex;
+    margin: 0 auto;
+    @media screen and (max-width: 576px) {
+         display: block;
+
+    }
+}
+
+.sm_size {
+    @media screen and (max-width: 576px) {
+        margin: 0 auto;
+        width: 100%;
+    }
+}*/
+br {
+    @media screen and (max-width: 576px) {
+        display: none;
+    }
+}
+
+/*.flex {
+    display: flex;
+    ja
+    @media screen and (max-width: 576px) {
+        display: block;
+    }
+}*/
+

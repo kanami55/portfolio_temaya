@@ -19,7 +19,7 @@
         </div>
         <div class="mt-2 text-center">
           <%= form_with model: @chat, data:{remote: true} do |f| %>
-            <%= f.text_field :message, class: "rounded-pill" ,style: "width: 70%;" %>
+            <%= f.text_field :message, class: "rounded-pill", style: "width: 70%;" %>
             <%= f.hidden_field :room_id %>
             <%= f.submit "送信", class: "btn_small btn_blue mb-2" %>
           <% end %>

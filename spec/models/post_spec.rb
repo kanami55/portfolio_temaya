@@ -9,8 +9,8 @@
       context 'titleカラム' do
         it '空欄で無いこと' do
           post.title = ''
-          expect(post).to be_invalid
-          expect(post.errors[:title]).to include("を入力してください")
+          expect(post).to be_invalid #無効であるか
+          expect(post.errors[:title]).to include("を入力してください") #配列に指定の値が含まれているか
         end
       end
 

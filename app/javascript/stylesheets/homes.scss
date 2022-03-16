@@ -9,7 +9,7 @@
 }
 
 .top_box {
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 768px) {
     padding-top: 20%;
     }
 }
@@ -22,7 +22,7 @@
     border: 2px solid black;
     position: relative;
 
-   @media screen and (max-width: 576px) {
+   @media screen and (max-width: 784px) {
     letter-spacing: 0.1em;
     line-height: 1.5;
     font-size: 50px;
@@ -134,7 +134,7 @@
     }
 }*/
 br {
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 784px) {
         display: none;
     }
 }
@@ -147,3 +147,8 @@ br {
     }
 }*/
 
+.top_btn {
+    @media screen and (max-width: 576px) {
+        margin-top: 50px;
+    }
+}

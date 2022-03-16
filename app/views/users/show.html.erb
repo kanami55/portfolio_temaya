@@ -1,4 +1,4 @@
-  <div class="container mt-4">
+  <div class="container mt-4 mb-4">
     <div class="row">
       <div class="mr-2 ml-2">
         <%= image_tag @user.get_profile_image, class: "icon_medium" %><br>
@@ -20,7 +20,7 @@
       <%= link_to 'DMへ', chat_path(@user.id) %>
       <% end %>
     </p>
-    <div style="width: 500px">自己紹介 :<br>
+    <div style="width: 80%;">自己紹介 :<br>
       <%= @user.introduction %>
     </div>
 

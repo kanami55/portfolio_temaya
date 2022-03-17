@@ -4,7 +4,6 @@ require 'rails_helper'
     #各テストコードが実行される前にFactoryBotで生成したインスタンス＠userを代入
     before do
       @user = FactoryBot.build(:user)
-
     end
 
     describe '新規登録'do
@@ -47,5 +46,4 @@ require 'rails_helper'
         expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end
     end
-
   end

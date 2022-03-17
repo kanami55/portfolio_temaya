@@ -26,6 +26,16 @@ require 'rails_helper'
         @user.valid?
         expect(@user.errors.full_messages).to include("Eメールを入力してください")
       end
+      it 'emailに@が含まれている事いる事' do
+        @user.email.slice!('@')
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Eメールは不正な値です")
+      end
+      it 'passwordが５以下で無いこと' do
+        @user.password = '123ab'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("パスワードは6文字以上で入力してください")
+      end
       it 'passwordが空欄で無いこと' do
         @user.password = ''
         @user.valid?

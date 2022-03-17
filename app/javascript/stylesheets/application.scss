@@ -56,6 +56,10 @@ a {
   object-fit: cover;
 }
 
+.card-header {
+  background-color: #fbfaf5;
+}
+
 /*プロフィールアイコン*/
 .icon_large  {
   height: 50px;
@@ -116,18 +120,6 @@ h3 {
   border-bottom: solid 4px #627295;
 }
 
-/*緑色編集ボタン*/
-.btn_green {
-  background: #3cb371;
-  border-bottom: solid 4px #2e8b57;
-}
-
-/*削除ボタン*/
-.btn_red {
-  background: #f08080;
-  border-bottom: solid 4px #cd5c5c;
-}
-
 /*フォローボタン*/
 .btn_follow {
   display: inline-block;
@@ -147,16 +139,6 @@ h3 {
   border-bottom: solid 2px #fa8072;
   border-radius: 10px;
   transition: .4s;
-}
-
-/*imageにカーソルを当てたら浮き上がる*/
-.image_hover {
-  transition-duration: .3s;
-  transition-property: transform;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
 /*topへ戻るボタン*/

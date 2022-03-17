@@ -58,8 +58,12 @@
           <%= image_tag @post.photo, class: "post_image" %>
             <div class="text-right">
               <% if @post.user_id == current_user.id %>
-                <%= link_to "編集", edit_post_path(@post.id), class: "btn_small btn_green mt-1" %>
-                <%= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn_small btn_red mt-1"%>
+                <%= link_to edit_post_path(@post.id) do %>
+                  <i class="fa fa-edit fa-lg mt-2"></i>
+                <% end %>
+                <%= link_to  post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+                  <i class="fa fa-trash-o fa-lg mt-2"></i>
+                <% end %>
               <% end %>
             </div>
         </div>

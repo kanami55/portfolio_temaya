@@ -28,6 +28,7 @@ DIYが好きなユーザ。手間を掛けて作る喜びに共感出来るユ�
 - UIフロー：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy
 - フレームワーク：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy
 - ER図：https://app.diagrams.net/#G1FlwctvQMqe-5D3rxyX1X5Ij36mlX40Dy
+- 詳細設計書：https://docs.google.com/spreadsheets/d/1h_Yx0ItNYg7JlevlyU5r2RFyNR9RJemJIUA9JL47Rl4/edit#gid=0
 
 
 ## チャレンジ要素一覧

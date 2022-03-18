@@ -6,6 +6,7 @@
       let(:user) { FactoryBot.create(:user) }
       let!(:post) {build(:post, user_id: user.id)}
 
+
       context 'titleカラム' do
         it '空欄で無いこと' do
           post.title = ''

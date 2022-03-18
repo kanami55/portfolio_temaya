@@ -6,7 +6,5 @@ FactoryBot.define do #データ定義
     explanation  { Faker::Lorem.characters }
     difficulty { Faker::Lorem.characters }
     association :user
-    association :like
-    association :post_comment
   end
 end

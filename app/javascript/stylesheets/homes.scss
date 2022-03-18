@@ -13,25 +13,18 @@
     padding-top: 20%;
     }
 }
-h1 {
-    font-size:5em;
-  background-color:  lightgray;
-  line-height: 1.5em;
-  font-weight:bold;
-  color: #393f4c;
-  text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
-}
-/*.top_text {
-    letter-spacing: 0.2em;
-    line-height: 1.8;
+
+.top_text {
+    font-family: 'Yomogi', cursive;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
     background-color: rgba(0, 0, 0, 0);
     outline: 0;
     border: 2px solid black;
     position: relative;
+    font-size: 80px;
 
    @media screen and (max-width: 784px) {
-    letter-spacing: 0.1em;
-    line-height: 1.5;
     font-size: 50px;
    }
 }
@@ -45,7 +38,7 @@ h1 {
     height: 100%;
     top: 7px;
     left: 7px;
-}*/
+}
 /*ログインボタン*/
 .btn_log_in {
     font-size: 20px;
@@ -118,10 +111,13 @@ h1 {
 .about_top {
     font-size: 50px;
     line-height: 1.5;
+    padding-top: 140px;
+    font-family: 'Yomogi', cursive;
 }
 
 .about_text {
     font-size: 24px;
+    font-family: 'Yomogi', cursive;
 }
 
 br {
@@ -131,9 +127,13 @@ br {
 }
 
 
-
 .top_btn {
     @media screen and (max-width: 576px) {
         margin-top: 50px;
     }
 }
+
+
+
+
+

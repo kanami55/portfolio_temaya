@@ -5,26 +5,26 @@ class ChatsController < ApplicationController
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
 
     if user_rooms.nil?
-     @room = Room.new
-     @room.save
-     UserRoom.create(user_id: @user.id, room_id: @room.id)
-     UserRoom.create(user_id: current_user.id, room_id: @room.id)
+      @room = Room.new
+      @room.save
+      UserRoom.create(user_id: @user.id, room_id: @room.id)
+      UserRoom.create(user_id: current_user.id, room_id: @room.id)
     else
-     @room = user_rooms.room
+      @room = user_rooms.room
     end
 
     @chats = @room.chats
     @chat = Chat.new(room_id: @room.id)
   end
 
- def create
+  def create
     @chat = current_user.chats.new(chat_params)
     @chat.save
- end
+  end
 
- private
+  private
 
- def chat_params
+  def chat_params
     params.require(:chat).permit(:message, :room_id)
- end
+  end
 end

@@ -7,7 +7,7 @@ RSpec.describe Like, type: :model do
 
   describe '正常値と異常値の確認' do
     context 'likeモデルのバリデーション' do
-　　　it 'user_idとpost_idがあれば保存出来る' do
+      it 'user_idとpost_idがあれば保存出来る' do
         expect(@like).to be_valid
       end
 
@@ -23,7 +23,5 @@ RSpec.describe Like, type: :model do
         expect(@like.errors[:post_id]).to include 'を入力してください'
       end
     end
-
   end
-
 end

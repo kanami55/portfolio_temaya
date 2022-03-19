@@ -6,16 +6,15 @@ class Post < ApplicationRecord
 
   validates :photo, :production_period, :cost, :explanation, :title, :difficulty, presence: true
 
-
-  #ActiveStrage使用宣言
+  # ActiveStrage使用宣言
   has_one_attached :photo
 
   def was_attached?
     self.photo.attached?
   end
 
-  #検索方法分岐定義
-  def self.looks(search,word)
+  # 検索方法分岐定義
+  def self.looks(search, word)
     if search == "perfect_match"
       @post = Post.where("title LIKE?", "#{word}")
     elsif search == "forward_match"
@@ -28,5 +27,4 @@ class Post < ApplicationRecord
       @post = Post.all
     end
   end
-
 end

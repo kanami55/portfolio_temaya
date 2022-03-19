@@ -9,7 +9,7 @@ RSpec.describe PostComment, type: :model do
   describe 'コメント機能' do
     context 'コメントを保存できる場合' do
       it "コメント文を入力済みであれば保存できる" do
-        expect(@post_comment).to be_valid #有効であるか
+        expect(@post_comment).to be_valid # 有効であるか
       end
     end
 

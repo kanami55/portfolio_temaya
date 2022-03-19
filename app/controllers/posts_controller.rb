@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @posts = Post.includes(:liked_users).sort { |a, b| b.liked_users.size <=> a.liked_users.size }
   end
 
   def show
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   end
 
   def update
-   @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.update(post_params)
     if @post.save
       flash[:notice] = "更新に成功しました！"

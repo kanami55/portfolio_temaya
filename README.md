@@ -1,4 +1,4 @@
-# てまや
+# Temaya
 
 ## サイト概要
 **DIYのSNSサイトです。**<br>
@@ -44,4 +44,5 @@ https://docs.google.com/spreadsheets/d/1WMonxMX4fyRbjwy-p1y1Q78xdxMDyNWjhcMCtRze
 
 ## 使用素材
 - O-DAN https: //o-dan.net/ja/
+- storyset: https://storyset.com/
 - Google Fonts: https://fonts.google.com/

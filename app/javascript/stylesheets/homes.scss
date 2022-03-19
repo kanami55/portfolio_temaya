@@ -1,6 +1,6 @@
 /*ホームの背景画像*/
 .home_backgraund {
-    height: 600px;
+    height: 90vh;
     background-image: url("../images/top_back.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -15,7 +15,6 @@
 }
 
 .top_text {
-    font-family: 'Yomogi', cursive;
     letter-spacing: 0.1em;
     line-height: 1.5;
     background-color: rgba(0, 0, 0, 0);

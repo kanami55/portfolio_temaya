@@ -19,6 +19,15 @@ class User < ApplicationRecord
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
 
+  #ゲストログイン機能
+  def self.guest
+    find_or_create_by!(name: 'guestuser' ,email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "guestuser"
+    end
+  end
+
+
   # バリデーション
   validates :email, uniqueness: true, presence: true
   validates :name, uniqueness: true, presence: true

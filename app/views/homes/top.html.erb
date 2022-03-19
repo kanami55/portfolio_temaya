@@ -15,22 +15,38 @@
 
   <div class="home_about">
     <div class="container mt-4">
-      <h3>About this temaya</h3>
+      <h3 style="font-size: 30px;">About this temaya</h3>
+      <p>こちらはDIY情報のSNS共有サイトです。</p>
       <p>アイディアが溢れるDIY情報をシェアしよう！</p>
-      <div class="row">
-        <div class="col-md-3">
-          <p>DIY情報投稿</p>
-          <p>DIY情報をシェアすることでリアルな評価を体験出来ます。</p>
+        <div class="about_main col-md-8 mx-auto mt-4 mb-4">
+          <div class="row about_box">
+            <div class="about_image mr-2">
+              <%= image_tag "about_create.png", size: "200x200" %>
+            </div>
+            <div class="about_text">
+              <h4>DIY情報投稿機能</h4>
+              <p>DIY情報をシェアすることでリアルな評価を体験出来ます。</p>
+            </div>
+          </div>
+          <div class="row about_box">
+            <div class="about_image mr-2">
+              <%= image_tag "about_show.png", size: "200x200", class: "about_image" %>
+            </div>
+            <div class="">
+              <h4>DIY詳細ページ</h4>
+              <p>気になった投稿について深く知ることが出来ます。</p>
+            </div>
+          </div>
+          <div class="row about_box">
+            <div class="about_image mr-2">
+              <%= image_tag "about_search.png", size: "200x200" %>
+            </div>
+            <div class="">
+              <h4>検索機能</h4>
+              <p>知りたい情報に早く出会うことができます。</p>
+            </div>
+          </div>
         </div>
-        <div class="col-md-3">
-          <p>DIY詳細ページ</p>
-          <p>気になった投稿について深く知ることが出来ます。</p>
-        </div>
-        <div class="col-md-3">
-          <p>検索機能</p>
-          <p>知りたい情報に早く出会うことができます。</p>
-        </div>
-      </div>
     </div>
   </div>
 

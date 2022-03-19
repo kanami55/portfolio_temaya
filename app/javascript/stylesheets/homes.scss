@@ -89,34 +89,24 @@
 }
 
 /*about*/
-.about_main {
-    text-align: center;
-    height: 600px;
-    background-image: url("../images/about_back2.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    &:hover {
-    text-align: center;
-    height: 600px;
-    background-image: url("../images/about_back3.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    }
+.abuot_text {
+  vertical-align: middle;
+  display: inline-block;
+}
+.about_box {
+    height: 200px;
+}
+.about_box:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.about_top {
-    font-size: 50px;
-    line-height: 1.5;
-    padding-top: 140px;
-    font-family: 'Yomogi', cursive;
+.about_box:nth-child(even) {
+  margin: 0 0 0 20px;
 }
 
-.about_text {
-    font-size: 24px;
-    font-family: 'Yomogi', cursive;
+.about_image {
+ display: inline-block;
+ vertical-align: middle;
 }
 
 br {

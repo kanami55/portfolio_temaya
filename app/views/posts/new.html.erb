@@ -1,6 +1,6 @@
   <div class="container mt-4 mb-4">
     <div class="card mx-auto col-lg-7 shadow p-3 bg-white rounded">
-      <h2>新規投稿</h2>
+      <h2 class="common_title">新規投稿</h2>
       <%= render "posts/error_message", post: @post %>
         <%= form_with model: @post, local: true, method: :post do |f| %>
           <div class="ml-3 mt-3">
@@ -42,10 +42,8 @@
                 <%= f.hidden_field :difficulty, id: :review_star %>
               </div>
             </div>
-
             <!-- 評価javascript -->
             <%= render "posts/star" %>
-
             <div class="row mt-3">
               <div class="col-md-3">
                 <%= f.label "説明:" %>

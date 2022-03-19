@@ -1,6 +1,6 @@
 /*ホームの背景画像*/
 .home_backgraund {
-    height: 90vh;
+    height: 100vh;
     background-image: url("../images/top_back.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -73,7 +73,7 @@
     border: 1px solid white;
     cursor: pointer;
     position: relative;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0,0,0,0);
     color: #fff;
 }
 
@@ -90,10 +90,10 @@
 
 /*ゲストログインボタン*/
 .btn_guest {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
-    padding: 13px 50px 13px;
+    padding: 13px 45px 13px;
     outline: 0;
     border: 1px solid white;
     cursor: pointer;
@@ -113,14 +113,15 @@
     left: 7px;
 }
 
+.top_btn {
+    @media screen and (max-width: 576px) {
+        margin-top: 50px;
+    }
+}
+
+
 /*about*/
-.abuot_text {
-   vertical-align: middle;
-   display: inline-block;
-}
-.about_box {
-    height: 200px;
-}
+
 .about_box:nth-child(even) {
    flex-direction: row-reverse;
 }
@@ -129,23 +130,14 @@
    margin: 0 0 0 20px;
 }
 
-.about_image {
-   display: inline-block;
-   vertical-align: middle;
+.about_title {
+  border-bottom: solid 5px #668ad8;
 }
 
-br {
-    @media screen and (max-width: 784px) {
-        display: none;
-    }
+.about_text_title {
+  border-bottom: solid 3px #668ad8;
 }
 
-
-.top_btn {
-    @media screen and (max-width: 576px) {
-        margin-top: 50px;
-    }
-}
 
 
 

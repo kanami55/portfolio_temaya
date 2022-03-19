@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 // @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+//フォントの種類
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400&display=swap');
 
 //共通部分レイアウト
@@ -18,6 +19,7 @@ body {
   box-sizing: border-box;
   height: 100%;
 }
+
 
 html {
   height: 100%;
@@ -81,18 +83,10 @@ a {
   margin-right: 10px;
 }
 
-
-h2 {
+.common_title {
   border-bottom: solid 2px #668ad8;
   padding-bottom: 20px;
   font-size: 24px;
-}
-
-h3 {
-  border-bottom: solid 2px #668ad8;
-  padding-bottom: 10px;
-  font-size: 20px;
-  width: 200px;
 }
 
 /*ボタンサイズ*/

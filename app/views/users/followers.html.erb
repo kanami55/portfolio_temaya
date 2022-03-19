@@ -1,5 +1,5 @@
   <div class="container mt-4 mb-4">
-    <h3><strong>フォロワーユーザー</strong></h3>
+    <h3 class="follow_title"><strong>フォロワーユーザー</strong></h3>
       <% if @users.exists? %>
         <%= render 'relationships/index', user: @user, users: @users, following_users: @following_users, follower_users: @follower_users %>
       <% else %>

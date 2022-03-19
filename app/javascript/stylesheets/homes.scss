@@ -88,25 +88,50 @@
     left: 7px;
 }
 
+/*ゲストログインボタン*/
+.btn_guest {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid white;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+.btn_guest::after {
+    content: "";
+    background-color: #f8b862;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+}
+
 /*about*/
 .abuot_text {
-  vertical-align: middle;
-  display: inline-block;
+   vertical-align: middle;
+   display: inline-block;
 }
 .about_box {
     height: 200px;
 }
 .about_box:nth-child(even) {
-  flex-direction: row-reverse;
+   flex-direction: row-reverse;
 }
 
 .about_box:nth-child(even) {
-  margin: 0 0 0 20px;
+   margin: 0 0 0 20px;
 }
 
 .about_image {
- display: inline-block;
- vertical-align: middle;
+   display: inline-block;
+   vertical-align: middle;
 }
 
 br {

@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
+  sessions: "admins/sessions"
+}
+
   devise_for :users
-  root to: 'homes#top'
 
   #admin側
-  namespace :admin do
+  namespace :admins do
+    root to: "homes#index"
     resources :posts, only: [:index, :show, :destroy]
   end
 
   #user側
+  root to: 'homes#top'
   resources :posts do
     resource :likes, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
@@ -25,4 +29,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
+
 end

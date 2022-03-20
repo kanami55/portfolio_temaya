@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :users
   root to: 'homes#top'
+
+  #admin側
+  namespace :admin do
+    resources :posts, only: [:index, :show, :destroy]
+  end
+
+  #user側
   resources :posts do
     resource :likes, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]

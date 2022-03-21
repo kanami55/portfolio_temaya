@@ -59,8 +59,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(is_deleted: true)
     reset_session
-    flash[:notice] = "退会処理を実行致しました。"
+    flash[:notice] = "アカウント削除を実行致しました。"
     redirect_to root_path
+  end
+
   private
 
   def user_params
@@ -70,7 +72,7 @@ class UsersController < ApplicationController
   def ensure_guest_user
     @user = User.find(params[:id])
     if @user.name == "guestuser"
-      redirect_to user_path(current_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+      redirect_to user_path(current_user),notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
     end
   end
 end

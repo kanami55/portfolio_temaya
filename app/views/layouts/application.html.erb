@@ -20,29 +20,18 @@
       <!--main-->
       <main class="mx-auto">
         <!--フラッシュメッセージ-->
-        <!--成功した時-->
-        <% if flash[:notice] %>
-          <div class="alert alert-info m-0">
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
-        <!--失敗した時-->
-        <% if flash[:alert] %>
-          <div class="alert alert-danger">
-            <%= flash[:alert] %>
-          </div>
-        <% end %>
+        <%= render "layouts/flash_error" %>
 
         <%= yield %>
+
+        <!--topへ戻るボタン-->
+        <%= render "layouts/pagetop" %>
       </main>
 
-    <!--topへ戻る-->
-    <a href="#" id="page_top"><i class="fas fa-angle-up"></i></a>
-
-    <!--footer-->
-    <footer>
-      <%= render "layouts/footer" %>
-    </footer>
+      <!--footer-->
+      <footer>
+        <%= render "layouts/footer" %>
+      </footer>
 
     </div>
   </body>

@@ -1,0 +1,12 @@
+<!--成功した時-->
+<% if flash[:notice] %>
+  <div class="alert alert-info m-0">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<!--失敗した時-->
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>

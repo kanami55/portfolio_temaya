@@ -16,16 +16,22 @@
   	return false;
   });
 
-  //ボタンを押したら指定位置までスクロール
-  $(function() {
-      var home_about = $("#home_about");
-      var body = $("body");
+ //
 
-      home_about.click(function() {
-        var  = $(this).attr("href");
-        var scroll_point = $().offset().top;
-        body.animate({
-          scrollTop: scroll_point
-        }, 300);
-      });
-  });
+jQuery('#about_down').click(function() {
+  //headerの高さの値を取得
+  let navbar = jQuery(".navbar").innerHeight();
+  let down_btn = jQuery(".down_btn").innerHeight();
+  let speed = 1000;
+  let id = jQuery(this).atter("href");
+  let target = jQuery("#" == id ? "html": id);
+  //headerの高さ分だけ引く
+  let position = jQuery(target).offset().top - navbar - down_btn;
+  jQuery("html, body").animate(
+    {
+      scrollTop: position
+    },
+    speed
+    );
+    return false
+});

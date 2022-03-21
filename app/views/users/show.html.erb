@@ -9,11 +9,9 @@
       <div class="ml-auto mr-2">
         <!--ユーザーがゲストだったら編集画面に遷移できない-->
         <% if !(current_user.name == "guestuser") %>
-          <% if @user == current_user %>
-            <% if current_user == @user || current_user.admin? %>
-              <%= link_to  edit_user_path do %>
-                <i class="fas fa-user-cog fa-2x"></i>
-              <% end %>
+          <% if current_user == @user || current_user.admin? %>
+            <%= link_to  edit_user_path do %>
+              <i class="fas fa-user-cog fa-2x"></i>
             <% end %>
           <% end %>
         <% end %>

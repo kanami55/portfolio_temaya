@@ -74,4 +74,9 @@ class User < ApplicationRecord
       @user = User.all
     end
   end
+
+  # 退会済みユーザは同じアカウントでログイン出来ない
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 end

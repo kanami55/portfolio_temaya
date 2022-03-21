@@ -54,6 +54,13 @@ class UsersController < ApplicationController
     @follower_users = @user.follower_user
   end
 
+  #退会処理
+  def withdrawal
+    @user = User.find(params[:id])
+    @user.update(is_deleted: true)
+    reset_session
+    flash[:notice] = "退会処理を実行致しました。"
+    redirect_to root_path
   private
 
   def user_params

@@ -11,6 +11,6 @@
   jQuery('#page_top').click(function () {
   	jQuery('body,html').animate({
   		scrollTop: 0
-  	}, 500);
+  	}, 800);
   	return false;
   });

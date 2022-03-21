@@ -13,7 +13,7 @@
 body {
   font-size: 16px;
   line-height: 24px;
-  background-color: #f7f6f2;
+  background-color: #f5f5f5;
   font-family: cursive, 'M PLUS 2', sans-serif;
   color: #000;
   box-sizing: border-box;
@@ -33,12 +33,13 @@ html {
 }
 
 header {
-  background-color: #f7f6f2;
+  background-color: rgba(0,0,0,0);
+  color: #fff;
 }
 
 footer {
   width: 100%;
-  background-color: #deb887;
+  background-color: #E6CCB5;
   height: 70px;
   line-height: 70px;
   position: absolute;
@@ -109,8 +110,14 @@ a {
 
 /*青色更新、登録ボタン*/
 .btn_blue {
-  background: #668ad8;/*ボタン色*/
+  background: #668ad8;
   border-bottom: solid 4px #627295;
+}
+
+/*削除ボタン*/
+.btn_red {
+  background: #fa8072;
+  border-bottom: solid 4px #f08080;
 }
 
 /*フォローボタン*/
@@ -128,14 +135,16 @@ a {
 .btn_post {
   display: inline-block;
   text-decoration: none;
-  background: #ffa07a;
-  border-bottom: solid 2px #fa8072;
+  background: #E38B75;;
+  border-bottom: solid 2px #BAA896;
   border-radius: 10px;
   transition: .4s;
 }
 
 /*topへ戻るボタン*/
 #page_top {
+  width: 30px;
+  height: 30px;
   position: fixed;
   right: 10px;
   bottom: 10px;
@@ -145,8 +154,11 @@ a {
   color: #737373;
   border: solid 1px;
   border-radius: 50%;
-  line-height: 4px;
+  align-items: center;
   text-align: center;
+  font-size: 20px;
+  justify-content: center;
+  cursor: pointer;
   &::hover {
     opacity: 1;
   }

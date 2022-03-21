@@ -6,6 +6,7 @@
     background-position: center center;
     background-size: cover;
     opacity: 0.8;
+    position: relative;
 }
 
 .top_box {
@@ -54,7 +55,7 @@
 
 .btn_log_in::after {
     content: "";
-    background-color: #ff7f50;
+    background-color: #E38B75;
     width: 100%;
     z-index: -1;
     position: absolute;
@@ -79,7 +80,7 @@
 
 .btn_sign_up::after {
     content: "";
-    background-color: #66cdaa;
+    background-color: #BAA896;
     width: 100%;
     z-index: -1;
     position: absolute;
@@ -104,7 +105,7 @@
 
 .btn_guest::after {
     content: "";
-    background-color: #f8b862;
+    background-color: #FEC463;
     width: 100%;
     z-index: -1;
     position: absolute;
@@ -130,25 +131,32 @@
 }
 
 .about_title {
-  border-bottom: solid 5px #668ad8;
+  border-bottom: solid 5px #FEC463;
 }
 
 .about_text_title {
-  border-bottom: solid 3px #668ad8;
+  border-bottom: solid 3px #FEC463;
 }
 
 /*about_downボタン*/
-.about_down {
-    position: fixed;
-    display: none;
-    padding: 4px;
+#about_down {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     background-color: #fff;
     color: #737373;
     border: solid 1px;
     border-radius: 50%;
-    line-height: 4px;
-    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    justify-content: center;
+    cursor: pointer;
     &::hover {
       opacity: 1;
     }
 }
+

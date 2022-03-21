@@ -46,3 +46,4 @@ https://docs.google.com/spreadsheets/d/1WMonxMX4fyRbjwy-p1y1Q78xdxMDyNWjhcMCtRze
 - O-DAN https: //o-dan.net/ja/
 - storyset: https://storyset.com/
 - Google Fonts: https://fonts.google.com/
+- icons8: https://icons8.jp/icons/set/favicon%EF%BC%89

@@ -1,6 +1,6 @@
 /*ホームの背景画像*/
 .home_backgraund {
-    height: 90vh;
+    height: 100vh;
     background-image: url("../images/top_back.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -122,41 +122,25 @@
 
 /*about*/
 
-.about_box:nth-child(even) {
-   flex-direction: row-reverse;
-}
-
-.about_box:nth-child(even) {
-   margin: 0 0 0 20px;
-}
-
 .about_title {
-  border-bottom: solid 5px #FEC463;
+  border-bottom: solid 5px #E38B75;
 }
 
 .about_text_title {
-  border-bottom: solid 3px #FEC463;
+  border-bottom: solid 3px #E38B75;
 }
 
-/*about_downボタン*/
-#about_down {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    background-color: #fff;
-    color: #737373;
-    border: solid 1px;
-    border-radius: 50%;
-    align-items: center;
-    font-size: 25px;
-    justify-content: center;
-    cursor: pointer;
-    &::hover {
-      opacity: 1;
-    }
+.about_box {
+    opacity : 0;
+	visibility: hidden;
+	transition: 1s;
+	transform: translateY(30px);
 }
+.active {
+    opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+
 

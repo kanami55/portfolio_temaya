@@ -18,20 +18,21 @@
 
  //
 
-jQuery('#about_down').click(function() {
-  //headerの高さの値を取得
-  let navbar = jQuery(".navbar").innerHeight();
-  let down_btn = jQuery(".down_btn").innerHeight();
-  let speed = 1000;
-  let id = jQuery(this).atter("href");
-  let target = jQuery("#" == id ? "html": id);
-  //headerの高さ分だけ引く
-  let position = jQuery(target).offset().top - navbar - down_btn;
-  jQuery("html, body").animate(
-    {
-      scrollTop: position
-    },
-    speed
-    );
-    return false
+
+$(function(){
+  $(window).on('load scroll',function (){
+    $('.about_box').each(function(){
+      //ターゲットの位置を取得
+      var target = $(this).offset().top;
+      //スクロール量を取得
+      var scroll = $(window).scrollTop();
+      //ウィンドウの高さを取得
+      var height = $(window).height();
+      //ターゲットまでスクロールするとフェードインする
+      if (scroll > target - height){
+        //クラスを付与
+        $(this).addClass('active');
+      }
+    });
+  });
 });

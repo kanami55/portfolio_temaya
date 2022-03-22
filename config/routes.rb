@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
   end
 
-  resources :users, only: [:new, :create, :index, :show, :edit, :update] do
+  resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     member do
       get :follows, :followers
     end
@@ -27,6 +27,6 @@ Rails.application.routes.draw do
 
   #管理者画面
   namespace :admin do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :destroy]
   end
 end

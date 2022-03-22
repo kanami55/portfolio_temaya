@@ -6,7 +6,7 @@
         </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-              <% if user_signed_in? %>
+              <% if user_signed_in? && current_user %>
               <li class="nav-item action">
                 <%= link_to "投稿する >", new_post_path, class: "nav-link btn_post text-white" %>
               </li>

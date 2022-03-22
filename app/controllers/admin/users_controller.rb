@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :admin
   #登録ユーザーを日付順で見れる
   def index
-    @users = User.all.oder(created_at: :desc)
+    @users = User.all.order(created_at: :desc)
   end
 
   private

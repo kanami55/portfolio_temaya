@@ -9,7 +9,8 @@
                 <%= @post.user.name %>
               </span>
             <% end %>
-            <% if @post.user_id == current_user.id %>
+            <% if @post.user_id == current_user.id || current_user.admin? %>
+            <%# if @post.user_id == current_user.id %>
               <%= link_to edit_post_path(@post.id), class: "ml-auto mx-0 pt-2" do %>
                 <i class="fa fa-edit fa-lg"></i>
             <% end %>

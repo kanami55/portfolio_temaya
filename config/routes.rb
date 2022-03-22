@@ -24,4 +24,9 @@ Rails.application.routes.draw do
   end
   #検索機能
   get "/search", to: "searches#search"
+
+  #管理者画面
+  namespace :admin do
+    resources :users, only: [:index]
+  end
 end

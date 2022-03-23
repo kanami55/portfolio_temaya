@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 // @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-//フォントの種類
+// フォントの種類
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400&display=swap');
 
 //共通部分レイアウト
@@ -40,8 +40,7 @@ header {
 footer {
   width: 100%;
   background-color: #E6CCB5;
-  height: 70px;
-  line-height: 70px;
+  height: 80px;
   position: absolute;
   bottom: 0;
 }
@@ -140,6 +139,14 @@ a {
   border-bottom: solid 2px #BAA896;
   border-radius: 10px;
   transition: .4s;
+}
+
+/*共通タイトルレイアウト*/
+.title_border {
+  border-bottom: solid 2px #668ad8;
+  padding-bottom: 10px;
+  font-size: 20px;
+  width: 200px;
 }
 
 /*topへ戻るボタン*/

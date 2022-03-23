@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     @follower_users = @user.follower_user
   end
 
-  #退会処理
+  # 退会処理
   def withdrawal
     @user = User.find(params[:id])
     @user.update(is_deleted: true)
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
   def ensure_guest_user
     @user = User.find(params[:id])
     if @user.name == "guestuser"
-      redirect_to user_path(current_user),notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+      redirect_to user_path(current_user), notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
     end
   end
 end

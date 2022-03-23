@@ -44,7 +44,7 @@ RSpec.describe "Postモデルのテスト", type: :model do
         expect(post.errors[:difficulty]).to include("を入力してください")
       end
     end
-    end
+  end
 
   describe 'アソシエーションのテスト' do
     context 'Userモデルとの関係' do

@@ -6,12 +6,12 @@ class Users::SessionsController < ApplicationController
     redirect_to posts_path, notice: 'guestuserでログインしました。'
   end
 
-  prodected
+  protected
 
   def reject_user
-    @user = User.find_by(name: params[:name],[:user])
+    @user = User.find( params[:id])
     if @user
-      if @user.valid_password?(params[:user],[:password]) && (@user.is_deleted == false)
+      if @user.valid_password?(params[:user], [:password]) && (@user.is_deleted == false)
         flash[:alrte] = "退会済みです。再度ご登録をしてご利用ください。"
         redirect_to new_user_registration
       else

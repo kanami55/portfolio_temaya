@@ -16,9 +16,7 @@
   	return false;
   });
 
- //
-
-
+ //ホーム画面のアニメーション
 $(function(){
   $(window).on('load scroll',function (){
     $('.about_box').each(function(){
@@ -30,7 +28,7 @@ $(function(){
       var height = $(window).height();
       //ターゲットまでスクロールするとフェードインする
       if (scroll > target - height){
-        //クラスを付与
+        //クラスを加える
         $(this).addClass('active');
       }
     });

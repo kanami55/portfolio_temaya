@@ -1,61 +1,61 @@
   <div class="container mt-4 mb-4">
     <div class="card mx-auto col-lg-7 shadow p-3 bg-white rounded">
       <h2 class="common_title">新規投稿</h2>
-      <%= render "posts/error_message", post: @post %>
-        <%= form_with model: @post, local: true, method: :post do |f| %>
-          <div class="ml-3 mt-3">
-            <div class="row mt-3">
-              <div class="col-md-3">
-                <%= f.label "画像:" %>
+        <%= render "posts/error_message", post: @post %>
+          <%= form_with model: @post, local: true, method: :post do |f| %>
+            <div class="ml-3 mt-3">
+              <div class="row mt-3">
+                <div class="col-md-3">
+                  <%= f.label "画像:" %>
+                </div>
+                <div class="col-4">
+                  <%= f.file_field :photo, accept: "image/*" %>
+                </div>
               </div>
-              <div class="col-4">
-                <%= f.file_field :photo, accept: "image/*" %>
+              <div class="row mt-3">
+                <div class="col-md-3">
+                  <%= f.label "タイトル:" %>
+                </div>
+                <div class="col-4">
+                  <%= f.text_field :title %>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-3">
+                  <%= f.label "製作期間:" %>
+                </div>
+                <div class="col-4">
+                  <%= f.text_field :production_period %>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-3">
+                  <%= f.label "製作費用:" %>
+                </div>
+                <div class="col-4">
+                  <%= f.text_field :cost %>
+                </div>
+              </div>
+              <div class="row mt-3" id="star">
+                  <%= f.label :difficulty,'難易度:', class: 'col-md-3 col-form-label' %>
+                <div class="ml-2">
+                  <%= f.hidden_field :difficulty, id: :review_star %>
+                </div>
+              </div>
+              <!-- 評価javascript -->
+              <%= render "posts/star" %>
+              <div class="row mt-3">
+                <div class="col-md-3">
+                  <%= f.label "説明:" %>
+                </div>
+                <div class="col-4">
+                  <%= f.text_area :explanation %>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+              <%= f.submit  "投稿", class: "btn_size btn_blue" %>
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="col-md-3">
-                <%= f.label "タイトル:" %>
-              </div>
-              <div class="col-4">
-                <%= f.text_field :title %>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-3">
-                <%= f.label "製作期間:" %>
-              </div>
-              <div class="col-4">
-                <%= f.text_field :production_period %>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-3">
-                <%= f.label "製作費用:" %>
-              </div>
-              <div class="col-4">
-                <%= f.text_field :cost %>
-              </div>
-            </div>
-            <div class="row mt-3" id="star">
-                <%= f.label :difficulty,'難易度:', class: 'col-md-3 col-form-label' %>
-              <div class="ml-2">
-                <%= f.hidden_field :difficulty, id: :review_star %>
-              </div>
-            </div>
-            <!-- 評価javascript -->
-            <%= render "posts/star" %>
-            <div class="row mt-3">
-              <div class="col-md-3">
-                <%= f.label "説明:" %>
-              </div>
-              <div class="col-4">
-                <%= f.text_area :explanation %>
-              </div>
-            </div>
-            <div class="text-center mt-3">
-            <%= f.submit  "投稿", class: "btn_size btn_blue" %>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
     </div>
   </div>

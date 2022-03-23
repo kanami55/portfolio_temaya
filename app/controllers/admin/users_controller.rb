@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
-  #管理者のみしか見れない
+  # 管理者のみしか見れない
   before_action :admin
-  #登録ユーザーを日付順で見れる
+  # 登録ユーザーを日付順で並べる
   def index
     @users = User.all.order(created_at: :desc)
   end

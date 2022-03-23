@@ -22,7 +22,6 @@ import "../stylesheets/admin/users"
 require('packs/raty')
 require('packs/custom')
 
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

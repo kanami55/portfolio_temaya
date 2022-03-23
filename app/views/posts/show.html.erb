@@ -9,15 +9,14 @@
                 <%= @post.user.name %>
               </span>
             <% end %>
-            <% if @post.user_id == current_user.id || current_user.admin? %>
-            <%# if @post.user_id == current_user.id %>
-              <%= link_to edit_post_path(@post.id), class: "ml-auto mx-0 pt-2" do %>
-                <i class="fa fa-edit fa-lg"></i>
-            <% end %>
-              <%= link_to  post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "pt-2 pl-1" do %>
-                <i class="fa fa-trash-o fa-lg"></i>
+              <% if @post.user_id == current_user.id || current_user.admin? %>
+                <%= link_to edit_post_path(@post.id), class: "ml-auto mx-0 pt-2" do %>
+                  <i class="fa fa-edit fa-lg"></i>
               <% end %>
-            <% end %>
+                <%= link_to  post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "pt-2 pl-1" do %>
+                  <i class="fa fa-trash-o fa-lg"></i>
+                <% end %>
+              <% end %>
           </div>
           <!--非同期通信いいね機能-->
           <div id="like_btn_<%= @post.id %>">
@@ -58,12 +57,12 @@
               </tr>
             </tbody>
           </table>
-          <div id="post_comment_index">
-            <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
-          </div>
-          <div id="post_comment_form">
-            <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
-          </div>
+            <div id="post_comment_index">
+              <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
+            </div>
+            <div id="post_comment_form">
+              <%= render "post_comments/comment_form", post: @post, post_comment: @post_comment %>
+            </div>
         </div>
         <div class="col-md-6 order-first mb-1">
           <%= image_tag @post.photo, class: "post_image" %>

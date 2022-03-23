@@ -1,12 +1,14 @@
 <!--成功した時-->
 <% if flash[:notice] %>
-  <div class="alert alert-info m-0">
+  <div class="alert alert-dismissible alert-info m-0">
     <%= flash[:notice] %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
 <% end %>
 <!--失敗した時-->
 <% if flash[:alert] %>
-  <div class="alert alert-danger">
+  <div class="alert alert-dismissible alert-danger">
     <%= flash[:alert] %>
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>
 <% end %>

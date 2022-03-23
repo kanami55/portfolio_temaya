@@ -1,4 +1,4 @@
-class Users::SessionsController < ApplicationController
+class Users::SessionsController < Devise::SessionsController
 
   def guest_sign_in
     user = User.guest
@@ -9,7 +9,7 @@ class Users::SessionsController < ApplicationController
   protected
 
   def reject_user
-    @user = User.find( params[:id])
+    @user = User.find_by(name: params[:user][:name])
     if @user
       if @user.valid_password?(params[:user], [:password]) && (@user.is_deleted == false)
         flash[:alrte] = "退会済みです。再度ご登録をしてご利用ください。"

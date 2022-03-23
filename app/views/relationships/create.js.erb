@@ -1,0 +1,1 @@
+document.querySelector('#follow_form').innerHTML = "<%= j(render 'relationships/index', user: @user, users: @users, following_users: @following_users, follower_users: @follower_users %><%= link_to "フォローする", user_relationships_path(user.id), method: :post, remote: true, class: "btn_follow" %></div>)";

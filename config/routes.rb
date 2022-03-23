@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'homes#top'
-  resources :posts do
-    resource :likes, only: [:create, :destroy]
-    resources :post_comments, only: [:create, :destroy]
-  end
   resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     member do
       get :follows, :followers
     end
     resource :relationships, only: [:create, :destroy]
   end
+
+  root to: 'homes#top'
+
   # 管理者画面
   namespace :admin do
     resources :users, only: [:index, :destroy]
+  end
+  resources :posts do
+    resource :likes, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
   end
   # ゲストログイン機能
   devise_scope :user do

@@ -4,7 +4,10 @@
         <%= image_tag @user.get_profile_image, class: "icon_medium" %><br>
         <p class="name_font mb-0"><%= @user.name%></p>
       </div>
-      <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
+
+      <div id="follow_form">
+        <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
+      </div>
 
       <div class="ml-auto mr-2">
         <!--ユーザーがゲストだったら編集画面に遷移できない-->
@@ -17,7 +20,7 @@
         <% end %>
         <% if current_user.admin? && !(current_user == @user) %>
         <div class="d-blok">
-          <%= link_to "管理画面",admin_users_path, class: "btn_size btn_blue" %>
+          <%= link_to "管理画面", admin_users_path, class: "btn_size btn_blue" %>
           <%= link_to "ユーザー削除", user_path(@user.id), method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn_red btn_small"%>
         </div>
         <% end %>

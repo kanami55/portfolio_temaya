@@ -5,10 +5,10 @@ RSpec.describe Like, type: :model do
     @like = FactoryBot.build(:like)
   end
 
-  describe '正常値と異常値の確認' do
+  describe '正常と異常の確認' do
     context 'likeモデルのバリデーション' do
       it 'user_idとpost_idがあれば保存出来る' do
-        expect(@like).to be_valid
+        expect(@like).to be_valid # 有効であるか
       end
 
       it 'user_idがなければ無効な状態であること' do

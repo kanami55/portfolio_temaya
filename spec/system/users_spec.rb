@@ -26,7 +26,7 @@ RSpec.describe User, type: :system do
           end
         end
 
-        context 'ユーザー名' do
+        context 'ユーザー名未入力' do
           it 'ユーザー新規登録失敗' do
             visit new_user_registration_path
             fill_in 'user[name]', with: nil

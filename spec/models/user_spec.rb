@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rails_helperのファイルを読み込んでいる
 
 RSpec.describe "Userモデルのテスト", type: :model do
   # 各テストコードが実行される前にFactoryBotで生成したインスタンス＠userを代入

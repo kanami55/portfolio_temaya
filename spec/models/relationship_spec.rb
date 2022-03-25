@@ -21,7 +21,7 @@ RSpec.describe Relationship, type: :model do
       it "followed_idがnilの場合は保存できない" do
         relationship.followed_id = nil
         relationship.valid?
-        expect(relationship).to be_invalid?
+        expect(relationship).to be_invalid
       end
     end
   end

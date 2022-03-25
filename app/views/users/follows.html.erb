@@ -1,10 +1,8 @@
 <div class="container mt-4 mb-4">
   <h3><strong class="title_border">フォローユーザー</strong></h3>
     <% if @users.exists? %>
-    <div id="follow_form">
       <%= render 'relationships/index', user: @user, users: @users, following_users: @following_users, follower_users: @follower_users %>
-    </div>
-      <% else %>
+    <% else %>
       <P>ユーザーはいません</P>
     <% end %>
 </div>

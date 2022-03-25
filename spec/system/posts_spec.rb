@@ -6,7 +6,7 @@ RSpec.describe Post, type: :system do
   describe '投稿のテスト' do
 
       let(:user) { FactoryBot.create(:user, name: 'test')}
-      let!(:post) { FactoryBot.create(:post, user: user) }
+      let!(:post) { FactoryBot.build(:post, user: user) }
 
 
     before do
@@ -19,7 +19,7 @@ RSpec.describe Post, type: :system do
     describe 'navberへの表示テスト' do
       context '表示の確認' do
         it '投稿すると表示される' do
-          expect(page).to have_content '投稿する>'
+          expect(page).to have_content '投稿する >'
           expect(current_path).to eq posts_path
         end
       end
@@ -38,26 +38,23 @@ RSpec.describe Post, type: :system do
         before do
           visit new_post_path
         end
-          it '画像投稿フォームが表示される' do
-            expect(page).to have_filed 'article[image]'
-          end
           it 'タイトルフォームが表示される' do
-            expect(page).to have_filed 'タイトル：'
+            expect(page).to have_field 'post_title'
           end
           it '製作期間フォームが表示される' do
-            expect(page).to have_filed '製作期間：'
+            expect(page).to have_field 'post_production_period'
           end
           it '製作費用フォームが表示される' do
-            expect(page).to have_filed '製作費用：'
+            expect(page).to have_field 'post_cost'
           end
           it '難易度フォームが表示される' do
-            expect(page).to have_filed '難易度：'
+            expect(page).to have_field 'post_difficulty'
           end
           it '説明フォームが表示される' do
-            expect(page).to have_filed '説明：'
+            expect(page).to have_field  'post_explanation'
           end
           it '投稿ボタンが表示される' do
-            expect(page).to have_button '投稿する'
+            expect(page).to have_button '投稿'
           end
       end
     end

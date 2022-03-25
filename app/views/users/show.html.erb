@@ -5,9 +5,7 @@
         <p class="name_font mb-0"><%= @user.name%></p>
       </div>
 
-      <div id="follow_form">
-        <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
-      </div>
+      <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
 
       <div class="ml-auto mr-2">
         <!--ユーザーがゲストだったら編集画面に遷移できない-->

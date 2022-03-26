@@ -3,7 +3,16 @@ require 'rails_helper' # 設定などを行うファイル
 RSpec.describe "Postモデルのテスト", type: :model do
   before do
     @post = FactoryBot.build(:post)
+    @post = build(:post)
+    @post.photo = fixture_file_upload("spec/fixtures/files/dummy.png")
   end
+  describe 'バリデーションのテスト' do
+    context '投稿画像' do
+      it 'photoが存在すれば登録可' do
+        expect(@post).to be_valid # 有効であるか
+      end
+    end
+
     context 'titleカラム' do
       it '空欄で無いこと' do
         @post.title = ''

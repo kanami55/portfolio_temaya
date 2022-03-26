@@ -4,7 +4,6 @@ RSpec.describe "Postモデルのテスト", type: :model do
   before do
     @post = FactoryBot.build(:post)
   end
-  describe 'バリデーションのテスト' do
     context 'titleカラム' do
       it '空欄で無いこと' do
         @post.title = ''

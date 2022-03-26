@@ -8,7 +8,6 @@ RSpec.describe Post, type: :system do
       let(:user) { FactoryBot.create(:user, name: 'test')}
       let!(:post) { FactoryBot.build(:post, user: user) }
 
-
     before do
       visit new_user_session_path
       fill_in 'user[name]', with: user.name
@@ -48,7 +47,7 @@ RSpec.describe Post, type: :system do
             expect(page).to have_field 'post_cost'
           end
           it '難易度フォームが表示される' do
-            expect(page).to have_field 'post_difficulty'
+            expect(page).to click_on 'review_star'
           end
           it '説明フォームが表示される' do
             expect(page).to have_field  'post_explanation'
@@ -74,10 +73,10 @@ RSpec.describe Post, type: :system do
 
       context 'タイトル未入力' do
         it '新規投稿失敗' do
-          fill_in "post_title", with: ""
-          fill_in "post_production_period", with: post.production_period
-          fill_in "post_cost", with: post.cost
-          fill_in "post_explanation", with: post.explanation
+          fill_in "post['タイトル:']", with: ""
+          fill_in "post['製作期間:']", with: post.production_period
+          fill_in "post['製作費用:']", with: post.cost
+          fill_in "post['説明:']", with: post.explanation
 
           click_button '投稿'
           expect(current_path).to eq new_post_path
@@ -88,7 +87,7 @@ RSpec.describe Post, type: :system do
       context '製作期間未入力' do
         it '新規投稿失敗' do
           fill_in 'post_title', with: post.title
-          fill_in 'post_production_period', with: nil
+          fill_in 'post_production_period', with: ""
           fill_in 'post_cost', with: post.cost
           fill_in 'post_explanation', with: post.explanation
           fill_in 'post_difficulty', with: post.difficulty
@@ -102,7 +101,7 @@ RSpec.describe Post, type: :system do
         it '新規投稿失敗' do
           fill_in 'post_title', with: post.title
           fill_in 'post_production_period', with: post.production_period
-          fill_in 'post_cost', with: nil
+          fill_in 'post_cost', with: ""
           fill_in 'post_explanation', with: post.explanation
           fill_in 'post_difficulty', with: post.difficulty
           click_button '投稿'
@@ -117,7 +116,7 @@ RSpec.describe Post, type: :system do
           fill_in 'post_production_period', with: post.production_period
           fill_in 'post_cost', with: post.cost
           fill_in 'post_explanation', with: post.explanation
-          fill_in 'post_difficulty', with: nil
+          fill_in 'post_difficulty', with: ""
           click_button '投稿'
           expect(current_path).to eq new_post_path
           expect(page).to have_content "Difficultyを入力してください"
@@ -129,7 +128,7 @@ RSpec.describe Post, type: :system do
           fill_in 'post_title', with: post.title
           fill_in 'post_production_period', wit: post.production_period
           fill_in 'post_cost', with: post.cost
-          fill_in 'post_explanation', with: nil
+          fill_in 'post_explanation', with: ""
           click_button '投稿'
           expect(current_path).to eq new_post_path
           expect(page).to have_content "Explanationを入力してください"

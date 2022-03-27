@@ -4,15 +4,13 @@
         <%= image_tag @user.get_profile_image, class: "icon_medium" %><br>
         <p class="name_font mb-0"><%= @user.name%></p>
       </div>
-
-      <%= render "relationships/relationship", user: @user, users: @user, following_users: @following_users, follower_users: @follower_users %>
-
+      <%= render "relationships/relationship", user: @user, users: @users, following_users: @following_users, follower_users: @follower_users %>
       <div class="ml-auto mr-2">
         <!--ユーザーがゲストだったら編集画面に遷移できない-->
         <% if !(current_user.name == "guestuser") %>
           <% if current_user == @user || current_user.admin? %>
             <%= link_to  edit_user_path do %>
-              <i class="fas fa-user-cog fa-2x"></i>
+              <i class="fas fa-user-edit fa-lg"></i>
             <% end %>
           <% end %>
         <% end %>

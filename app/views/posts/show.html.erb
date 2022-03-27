@@ -11,7 +11,7 @@
             <% end %>
               <% if @post.user_id == current_user.id || current_user.admin? %>
                 <%= link_to edit_post_path(@post.id), class: "ml-auto mx-0 pt-2" do %>
-                  <i class="fas fa-pen-square fa-lg"></i>
+                  <i class="fas fa-pen-square fa-lg edit_link"></i>
               <% end %>
                 <%= link_to  post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "pt-2 pl-1" do %>
                   <i class="fa fa-trash-o fa-lg"></i>

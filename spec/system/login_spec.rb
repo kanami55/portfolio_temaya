@@ -7,7 +7,7 @@ describe 'ユーザーログイン前にテスト' do
     end
 
     context '表示内容の確認'do
-      it 'URLのが正しい' do
+      it 'URLが正しい' do
         expect(current_path).to eq '/'
       end
       it ''

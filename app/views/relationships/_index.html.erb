@@ -3,17 +3,17 @@
         <table class="table">
           <tbody>
             <tr>
-              <td style="width: 20%">
+              <td style="width: 10%">
                 <%= link_to user_path(user.id) do %>
                   <%= image_tag user.get_profile_image, class: "icon_large" %>
                 <% end %>
               </td>
-              <td class="name_font" style="width: 20%">
+              <td class="name_font" style="width: 40%">
                 <%= link_to user_path(user.id) do %>
                   <%= user.name %>
                 <% end %>
               </td>
-              <td style="width: 60%" class="pr-0">
+              <td style="width: 50%" class="pr-0">
                 <% if current_user != user %>
                   <% if current_user.following?(user) %>
                     <%= link_to "フォロー外す", user_relationships_path(user.id), method: :delete, class: "btn_follow" %>

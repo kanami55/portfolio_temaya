@@ -32,13 +32,13 @@
         <%= link_to 'DMへ', chat_path(@user.id) %>
         <% end %>
       </p>
-      <div style="width: 70%;"><mark>自己紹介 :</mark><br>
-        <%= @user.introduction %>
+      <div style="width: 80%;"><mark>自己紹介</mark>
+        <p style="white-space:pre-wrap;"><%= @user.introduction %></p>
       </div>
 
     <div class="row mx-auto">
       <% @posts.each do |post| %>
-      <div class="col-sm-6 col-lg-3 mt-4">
+      <div class="col-sm-6 col-lg-3 mt-2">
         <div class="card-wrap shadow">
         <% if post.photo.attached? %>
           <%= link_to post_path(post.id) do %>

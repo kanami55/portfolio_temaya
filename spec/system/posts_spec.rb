@@ -18,7 +18,7 @@ RSpec.describe Post, type: :system do
     describe 'navberへの表示テスト' do
       context '表示の確認' do
         it '投稿すると表示される' do
-          expect(page).to have_content '投稿する >'
+          expect(page).to have_content '投稿する'
           expect(current_path).to eq posts_path
         end
       end

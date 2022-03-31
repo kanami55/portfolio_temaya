@@ -58,12 +58,12 @@ end
 
 describe 'ユーザーログイン後のテスト' do
   describe 'headerのテスト' do
-    let(:user) { FactoryBot.create(:user, name: 'login_name')}
+    let(:user) { FactoryBot.create(:user, name: 'test')}
 
     before do
       visit new_user_session_path
-      fill_in 'user[:name]', with: 'login_name'
-      fill_in 'user[:password]', with: user.password
+      fill_in 'user[name]', with: 'test'
+      fill_in 'user[password]', with: user.password
       click_button 'ログイン'
     end
 
@@ -73,21 +73,19 @@ describe 'ユーザーログイン後のテスト' do
       end
       it '投稿するが表示される：左上から１番目のリンクが「投稿する」である' do
         new_post_link = find_all('a')[1].native.inner_text
-        expect(new_post_link).to find("a:has(.nav_link)")
+        expect(new_post_link).to match("投稿する")
       end
       it '人のアイコンが表示される：左上から2番目のリンクが「マイページ」である' do
-        user_link = find_all('a')[2].native.inner_text
-        expect(user_link).to find("a:has(.nav_link)")
+        userlink = find_all('a')[2].native.inner_text
+        expect(userlink).to match("\n") #改行文字
       end
       it '画像のアイコンが表示される：左上から3番目のリンクが「投稿一覧ページ」である' do
         post_link = find_all('a')[3].native.inner_text
-        expect(post_link).to find("a:has(.nav_link)")
+        expect(post_link).to match("\n")
       end
       it 'ログアウトのアイコンが表示される：左上から4番目のリンクが「ログアウト」である' do
-        segin_out_link = find_all('a')[4].native.inner_text
-        expect(segin_out_link).to find("a:has(.nav_link)")
-      end
-      it  do
+        sign_out_link = find_all('a')[4].native.inner_text
+        expect(sign_out_link).to match("\n")
       end
     end
   end

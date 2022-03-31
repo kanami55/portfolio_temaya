@@ -56,6 +56,33 @@ describe 'ユーザーログイン前のテスト' do
   end
 end
 
+describe 'ユーザー新規登録のテスト' do
+  before do
+    visit new_user_registration_path
+  end
+
+  context '表示内容の確認' do
+    it 'URLが正しい' do
+      expect(current_path).to eq '/users/sign_up'
+    end
+    it '名前フォームが表示される' do
+      expect(page).to have_field 'user[name]'
+    end
+    it 'メールアドレスフォームが表示される' do
+      expect(page).to have_field 'user[email]'
+    end
+    it 'パスワードフォームが表示される' do
+      expect(page).to have_field 'user[password]'
+    end
+    it '確認パスワードフォームが表示される' do
+      expect(page).to have_field 'user[password_confirmation]'
+    end
+    it '登録ボタンが表示される' do
+      expect(page).to have_button '登録'
+    end
+  end
+end
+
 describe 'ユーザーログイン後のテスト' do
   describe 'headerのテスト' do
     let(:user) { FactoryBot.create(:user, name: 'test')}

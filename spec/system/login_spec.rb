@@ -57,6 +57,7 @@ describe 'ユーザーログイン前のテスト' do
 end
 
 describe 'ユーザー新規登録のテスト' do
+  let(:user) { FactoryBot.create(:user, name: 'test')}
   before do
     visit new_user_registration_path
   end
@@ -79,6 +80,23 @@ describe 'ユーザー新規登録のテスト' do
     end
     it '登録ボタンが表示される' do
       expect(page).to have_button '登録'
+    end
+  end
+
+  context '新規登録成功のテスト' do
+    before do
+      fill_in 'user[name]', with: 'test'
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[password]', with: user.password
+      fill_in 'user[password_confirmation]', with: user.password_confirmation
+    end
+
+    it '正しく新規登録される' do
+      expect(:user). to eq :user
+    end
+    it '新規登録後は投稿一覧ページに遷移する' do
+      click_button '登録'
+      expect().to eq posts_path
     end
   end
 end

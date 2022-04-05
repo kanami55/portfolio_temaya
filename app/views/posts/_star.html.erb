@@ -1,4 +1,6 @@
   <script>
+  $(document).on('turbolinks:load', function(){
+    $('#star').empty();
     $('#star').raty({
       size     : 20,
       starOff:  '<%= asset_path('star-off.png') %>',
@@ -6,4 +8,5 @@
       scoreName: 'post[difficulty]',
       half: false,
     });
+  });
   </script>

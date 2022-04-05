@@ -41,6 +41,8 @@
                 <td id="star-rate<%= @post.id %>"></td>
                 <!--評価javascript-->
                 <script>
+                $(document).on('turbolinks:load', function(){
+                  $('#star-rate<%= @post.id%>').empty();
                   $('#star-rate<%= @post.id%>').raty({
                     size      : 20,
                     starOff   : '<%= asset_path('star-off.png') %>',
@@ -49,6 +51,7 @@
                     readOnly: true,
                     score: '<%= @post.difficulty %>',
                   });
+                });
                 </script>
               </tr>
               <tr>

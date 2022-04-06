@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
+  has_many :notifications, dependent: :destroy
 
   validates :photo, :production_period, :cost, :explanation, :title, :difficulty, presence: true
 

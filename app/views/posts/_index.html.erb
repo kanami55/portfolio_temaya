@@ -21,7 +21,7 @@
                 難易度:
                 <span class="ml-2" id="star-rate<%= post.id %>"></span>
                   <script>
-                  $(document).on('turbolinks:load', function(){
+
                     $('#star-rate<%= post.id%>').empty();
                     $('#star-rate<%= post.id%>').raty({
                       size      : 10,
@@ -31,7 +31,7 @@
                       readOnly: true,
                       score: '<%= post.difficulty %>',
                     });
-                  });
+
                   </script>
             </div>
           </div>

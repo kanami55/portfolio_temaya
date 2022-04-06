@@ -19,7 +19,9 @@ class User < ApplicationRecord
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
   #通知機能
+  #自分が作った通知
   has_many :active_notifications, class_name: "Notifications", foreign_key: "visitor_id", dependent: :destroy
+  #自分宛の通知
   has_many :passive_notifications, class_name: "Notifications", foreign_key: "visited_id", dependent: :destroy
 
   # バリデーション

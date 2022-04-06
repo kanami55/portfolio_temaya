@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   end
   # DM機能
   resources :chats, only: [:create, :show]
+  #通知機能
+  resources :notifications, only: [:index]
   # 検索機能
   get "/search", to: "searches#search"
   # 退会確認画面

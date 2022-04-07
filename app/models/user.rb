@@ -20,10 +20,9 @@ class User < ApplicationRecord
   has_many :chats, dependent: :destroy
   #通知機能
   #自分が作った通知
-  has_many :active_notifications, class_name: "Notifications", foreign_key: "visitor_id", dependent: :destroy
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
   #自分宛の通知
-  has_many :passive_notifications, class_name: "Notifications", foreign_key: "visited_id", dependent: :destroy
-
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
   # バリデーション
   validates :email, uniqueness: true, presence: true
   validates :name, uniqueness: true, presence: true
@@ -84,9 +83,9 @@ class User < ApplicationRecord
     super && (is_deleted == false)
   end
 
-  #フォローのメソッド
+  #フォロー時の通知
   def create_notification_follow!(current_user)
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ?, current_user.id, id, 'follow"])
+    temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,

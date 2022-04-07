@@ -11,6 +11,14 @@
                 <%= link_to "投稿する >", new_post_path, class: "nav-link btn_post text-white" %>
               </li>
               <li class="nav-item">
+                <% if unchecked_notifications.any? %>
+                  <i class="fas fa-circle"></i>
+                <% end %>
+                <%= link_to notifications_path, class: "nav-link" do %>
+                  <i class="fas fa-bell fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="nav-item">
                 <%= link_to user_path(current_user), class: "nav-link" do %>
                   <i class="fas fa-user-circle fa-2x"></i>
                 <% end %>

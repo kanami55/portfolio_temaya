@@ -1,9 +1,9 @@
 <div class="container">
   <h3 class="text-center"><strong class="title_border">通知</strong></h3>
-  <%#= link_to destroy_all_users_notification_path, method: :delete do %>
+  <%= link_to destroy_all_notification_path, method: :delete do %>
   <i class="fa fa-trash-o fa-lg"></i>
   <span>全削除</span>
-  <%# end %>
+  <% end %>
   <% if @notifications.exists? %>
     <%= render @notifications %>
   <% else %>

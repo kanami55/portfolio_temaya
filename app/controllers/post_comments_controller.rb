@@ -6,7 +6,7 @@ class PostCommentsController < ApplicationController
     @comment.post_id = @post.id
     @post_comment = PostComment.new
     if @comment.save
-      @comment.post_id.create_notification_comment!(current_user,@post_comment.id)
+       @comment.post_id.create_notification_post_comment!(current_user, @post_comment.id)
       render "index"
     end
   end

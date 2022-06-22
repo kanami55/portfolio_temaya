@@ -1,3 +1,4 @@
-<!--topへ戻るボタン-->
-  <a href="#" id="page_top"><i class="fas fa-angle-up"></i></a>
-
+  <!--topへ戻るボタン-->
+  <button v-show="buttonActive" @click="pageTop" class="pageTop_btn">
+    <i class="fas fa-angle-up"></i>
+  </button>

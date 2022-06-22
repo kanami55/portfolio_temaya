@@ -37,9 +37,30 @@
 
  document.addEventListener('DOMContentLoaded', () => {
    const app = new Vue({
-     el: '#hello',
+     el: '#vue_app',
      data: {
-       message: "Can you say hello?"
+      buttonActive: false, //ボタン非表示
+      scroll: 0
+     },
+     mounted() {
+       window.addEventListener('scroll', this.scrollWindow)
+     },
+     methods: {
+       pageTop() {
+         window.scrollTo({
+           top: 0,
+           behavior: 'smooth',
+         })
+       },
+       scrollWindow() {
+         const top = 100
+         this.scroll = window.scrollY //垂直方向
+         if(top <= this.scroll) {
+           this.buttonActive = true
+         } else {
+           this.buttonActive = false
+         }
+       }
      },
      components: { App }
    })

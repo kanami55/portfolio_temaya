@@ -9,12 +9,12 @@
   });*/
 
   //ボタンをクリックしたら0.5秒かけて上に戻る
-  jQuery('#page_top').click(function () {
+  /*jQuery('#page_top').click(function () {
   	jQuery('body,html').animate({
   		scrollTop: 0
   	}, 800);
   	return false;
-  });
+  });*/
 
  //ホーム画面のアニメーション
 $(function(){

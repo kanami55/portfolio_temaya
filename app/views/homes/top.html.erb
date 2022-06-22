@@ -21,14 +21,18 @@
       <h3><span class="about_title">About this temaya</span></h3>
       <p class="pt-2">こちらはDIYのSNS共有サイトです。</p>
       <p><strong>アイディアが溢れるDIY情報をシェアしよう！</strong></p>
+      <transition>
       <div class="about_main d-md-flex justify-content-md-between mx-auto mt-4 mb-4">
-        <div class="about_box col-md-3">
-          <div class="text-center">
-            <%= image_tag "about_create.png", size: "200x200" %>
+        <faedInComponent>
+          <div class="about_box col-md-3">
+            <div class="text-center">
+              <%= image_tag "about_create.png", size: "200x200" %>
+            </div>
+            <h5><span class="about_text_title">DIY情報投稿機能</span></h5>
+            <p class="pt-2">DIY情報をシェアすることでリアルな評価を体験出来ます。</p>
           </div>
-          <h5><span class="about_text_title">DIY情報投稿機能</span></h5>
-          <p class="pt-2">DIY情報をシェアすることでリアルな評価を体験出来ます。</p>
-        </div>
+        </faedInComponent>
+        <faedInComponent>
         <div class="about_box col-md-3">
           <div class="text-center">
             <%= image_tag "about_show.png", size: "200x200" %>
@@ -36,6 +40,8 @@
           <h5><span class="about_text_title">DIY詳細ページ</span></h5>
           <p class="pt-2">気になった投稿について深く知ることが出来ます。</p>
         </div>
+        </faedInComponent>
+        <faedInComponent>
         <div class="about_box col-md-3">
           <div class="text-center">
             <%= image_tag "about_search.png", size: "200x200" %>
@@ -43,7 +49,9 @@
           <h5><span class="about_text_title">検索機能</span></h5>
           <p class="pt-2">知りたい情報が早く見つかります。</p>
         </div>
+        </faedInComponent>
       </div>
+      </transition>
     </div>
   </div>
 

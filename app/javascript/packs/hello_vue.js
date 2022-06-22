@@ -62,8 +62,30 @@
          }
        }
      },
-     components: { App }
-   })
+ })
+
+ Vue.components('faedInComponent', {
+       template: `<div class="{faedIn: visible}"><slot v-show="visible"></slot></div>`,
+       data() {
+         return {
+           visible: false
+         };
+       },
+       created() {
+         window.addEventListener("scroll",this.handllscroll);
+       },
+       destryed() {
+         window.addEventListener("scroll",this.handllscroll);
+       },
+       methods: {
+         handllscroll() {
+           if (!this.visible) {
+             var top = this.$el.getBoundingClientRect().top;
+             this.visible = top < window.innerHeight + 100;
+           }
+
+         }
+       }
  })
 //
 //

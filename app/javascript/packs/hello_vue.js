@@ -34,7 +34,6 @@
 
  import Vue from 'vue/dist/vue.esm'
  import App from './app.vue'
-
  // import AboutFaeadIn from '../component/AboutFaedIn.vue'
 
 
@@ -68,6 +67,7 @@
        },
      },
  })
+ });
 
 
 // })
@@ -94,4 +94,4 @@
 //       }
 //     },
 //     components: { App }
- });
+

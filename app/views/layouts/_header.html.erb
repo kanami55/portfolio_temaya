@@ -10,6 +10,18 @@
               <li class="nav-item action">
                 <%= link_to "投稿する >", new_post_path, class: "nav-link btn_post text-white" %>
               </li>
+              <li class="nav-item fa-stack">
+                <% if unchecked_notifications.any? %>
+                  <%= link_to notifications_path, class: "nav-link " do %>
+                    <i class="fas fa-bell fa-2x fa-stack-2x"></i>
+                  <% end %>
+                    <i class="fas fa-circle"  style="color: gold;"　data-fa-transform="shrink-5 left-6"></i>
+                <% else %>
+                  <%= link_to notifications_path, class: "nav-link " do %>
+                    <i class="fas fa-bell fa-2x"></i>
+                  <% end %>
+                <% end %>
+              </li>
               <li class="nav-item">
                 <%= link_to user_path(current_user), class: "nav-link" do %>
                   <i class="fas fa-user-circle fa-2x"></i>

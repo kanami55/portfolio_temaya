@@ -8,31 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'hello_vue' %>
+    <%= stylesheet_pack_tag 'hello_vue'  %>
     <script src="https://kit.fontawesome.com/4b4cd959ca.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="wrap">
-      <!--header-->
-      <header class="shadow-sm header sticky-top">
-        <%= render "layouts/header" %>
-      </header>
+    <div id="vue_app">
+      <div class="wrap">
+        <!--header-->
+        <header class="shadow-sm header sticky-top">
+          <%= render "layouts/header" %>
+        </header>
 
-      <!--main-->
-      <main class="mx-auto">
-        <!--フラッシュメッセージ-->
-        <%= render "layouts/flash_error" %>
+        <!--main-->
+        <main class="mx-auto">
+          <!--フラッシュメッセージ-->
+          <%= render "layouts/flash_error" %>
 
-        <%= yield %>
+          <%= yield %>
 
-        <!--topへ戻るボタン-->
-        <%= render "layouts/pagetop" %>
-      </main>
+          <!--topへ戻るボタン-->
+          <%= render "layouts/pagetop" %>
 
-　　　<!--footer-->
-      <footer>
-        <%= render "layouts/footer" %>
-      </footer>
+        </main>
+  　　  　<!--footer-->
+        <footer>
+          <%= render "layouts/footer" %>
+        </footer>
+      </div>
     </div>
   </body>
 </html>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'hello_vue/index'
   devise_for :users
   resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     member do

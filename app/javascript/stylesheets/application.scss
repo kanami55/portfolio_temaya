@@ -168,25 +168,16 @@ a {
 }
 
 /*topへ戻るボタン*/
-#page_top {
-  width: 30px;
-  height: 30px;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  display: none;
-  padding: 4px;
-  background-color: #fff;
-  color: #737373;
-  border: solid 1px;
-  border-radius: 50%;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 100;
-  &::hover {
-    opacity: 1;
-  }
-}
+ .pageTop_btn {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     background: #acabab;
+     line-height: 40px;
+     margin: 0 auto;
+     z-index: 10;
+     border: none;
+ }

@@ -129,14 +129,15 @@
   border-bottom: solid 3px #E38B75;
 }
 
-.about_box {
-    opacity : 0;
-	visibility: hidden;
-	transition: 1s;
-	transform: translateY(30px);
-}
-.active {
-    opacity: 1;
-	visibility: visible;
-	transform: translateY(0);
-}
+ .about_box {
+     opacity : 0;
+ 	visibility: hidden;
+ 	transition: 1s;
+ 	transform: translateY(30px);
+ }
+ .active {
+     opacity: 1;
+ 	visibility: visible;
+ 	transform: translateY(0);
+ }
+

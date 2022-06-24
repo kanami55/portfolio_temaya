@@ -33,18 +33,23 @@
 
 
  import Vue from 'vue/dist/vue.esm'
- import App from '../app.vue'
+ import App from './app.vue'
+
+ // import AboutFaeadIn from '../component/AboutFaedIn.vue'
+
 
  document.addEventListener('DOMContentLoaded', () => {
    const app = new Vue({
      el: '#vue_app',
      data: {
-      buttonActive: false, //ボタン非表示
-      scroll: 0
+       buttonActive: false, //ボタン非表示
+       scroll: 0,
+       show: false
      },
      mounted() {
-       window.addEventListener('scroll', this.scrollWindow)
+        window.addEventListener('scroll', this.scrollWindow)
      },
+
      methods: {
        pageTop() {
          window.scrollTo({
@@ -60,34 +65,12 @@
          } else {
            this.buttonActive = false
          }
-       }
+       },
      },
  })
 
- Vue.components('faedInComponent', {
-       template: `<div class="{faedIn: visible}"><slot v-show="visible"></slot></div>`,
-       data() {
-         return {
-           visible: false
-         };
-       },
-       created() {
-         window.addEventListener("scroll",this.handllscroll);
-       },
-       destryed() {
-         window.addEventListener("scroll",this.handllscroll);
-       },
-       methods: {
-         handllscroll() {
-           if (!this.visible) {
-             var top = this.$el.getBoundingClientRect().top;
-             this.visible = top < window.innerHeight + 100;
-           }
 
-         }
-       }
- })
-//
+// })
 //
 //
 // If the project is using turbolinks, install 'vue-turbolinks':
@@ -111,5 +94,4 @@
 //       }
 //     },
 //     components: { App }
-//   })
-// })
+ });

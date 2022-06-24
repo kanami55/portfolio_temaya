@@ -168,22 +168,16 @@ a {
 }
 
 /*topへ戻るボタン*/
-.pageTop_btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #acabab;
-    line-height: 40px;
-    margin: 0 auto;
-}
-
-.v-enter-active, .v-leave-active {
-  transition: opacity 1s;
-}
-/* opacity:0から1へのフェードイン＆フェードアウト */
-.v-enter, .v-leave-to {
-  opacity: 0;
-}
+ .pageTop_btn {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     background: #acabab;
+     line-height: 40px;
+     margin: 0 auto;
+     z-index: 10;
+     border: none;
+ }

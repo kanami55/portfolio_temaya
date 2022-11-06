@@ -153,7 +153,7 @@ a {
 .btn_post {
   display: inline-block;
   text-decoration: none;
-  background: #E38B75;;
+  background: #E38B75;
   border-bottom: solid 2px #BAA896;
   border-radius: 10px;
   transition: .4s;
@@ -175,9 +175,9 @@ a {
      width: 40px;
      height: 40px;
      border-radius: 50%;
-     background: #acabab;
+     background: #E6CCB5;
      line-height: 40px;
      margin: 0 auto;
      z-index: 10;
-     border: none;
+     border: solid 1px #000;
  }
